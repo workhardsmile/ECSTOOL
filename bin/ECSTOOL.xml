@@ -1,0 +1,2840 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ECSTOOL</name>
+    </assembly>
+    <members>
+        <member name="T:ECSTOOL.ApiCode">
+            <summary>
+            API消息类型ApiCode.XX
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SM_CXSCREEN">
+            <summary>
+            获取系统宽度
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SM_CYSCREEN">
+            <summary>
+            获取系统高度
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_KEYDOWN">
+            <summary>
+            WM_KEYDOWN 按下一个键
+            </summary>       
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CLICK">
+            <summary>
+            释放一个键
+            </summary>        
+        </member>
+        <member name="F:ECSTOOL.ApiCode.GWL_ID">
+            <summary>
+            GetWindowLong(hwnd, ApiCode.GWL_ID);
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_KEYUP">
+            <summary>
+            按下某键， WM_KEYUP消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CHAR">
+            <summary>
+            按下某键，并已发出WM_KEYDOWN， WM_KEYUP消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_DEADCHAR">
+            <summary>
+            当用translatemessage函数翻译WM_KEYUP消息时发送此消息给拥有焦点的窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SYSKEYDOWN">
+             <summary>
+            当用户按住ALT键同时按下其它键时提交此消息给拥有焦点的窗口 
+             </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SYSKEYUP">
+             <summary>
+            当用户释放一个键同时ALT 键还按着时提交此消息给拥有焦点的窗口
+             </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SYSCHAR">
+            <summary>
+            当WM_SYSKEYDOWN消息被TRANSLATEMESSAGE函数翻译后提交此消息给拥有焦点的窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SYSDEADCHAR">
+            <summary>
+            当WM_SYSKEYDOWN消息被TRANSLATEMESSAGE函数翻译后发送此消息给拥有焦点的窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_INITDIALOG">
+             <summary>
+            在一个对话框程序被显示前发送此消息给它，通常用此消息初始化控件和执行其它任务
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_COMMAND">
+             <summary>
+            当用户选择一条菜单命令项或当某个控件发送一条消息给它的父窗口，一个快捷键被翻译
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SYSCOMMAND">
+             <summary>
+            当用户选择窗口菜单的一条命令或当用户选择最大化或最小化时那个窗口会收到此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_TIMER">
+             <summary>
+            发生了定时器事件
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_HSCROLL">
+             <summary>
+            当一个窗口标准水平滚动条产生一个滚动事件时发送此消息给那个窗口，也发送给拥有它的控件
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_VSCROLL">
+             <summary>
+            当一个窗口标准垂直滚动条产生一个滚动事件时发送此消息给那个窗口也，发送给拥有它的控件
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_INITMENU">
+             <summary>
+            当一个菜单将要被激活时发送此消息，它发生在用户菜单条中的某项或按下某个菜单键，它允许程序在显示前更改菜单
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_INITMENUPOPUP">
+             <summary>
+            当一个下拉菜单或子菜单将要被激活时发送此消息，它允许程序在它显示前更改菜单，而不要改变全部
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_MENUSELECT">
+             <summary>
+            当用户选择一条菜单项时发送此消息给菜单的所有者（一般是窗口）
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_MENUCHAR">
+             <summary>
+            当菜单已被激活用户按下了某个键（不同于加速键），发送此消息给菜单的所有者
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_ENTERIDLE">
+             <summary>
+            当一个模态对话框或菜单进入空载状态时发送此消息给它的所有者，一个模态对话框或菜单进入空载状态就是在处理完一条或几条先前的消息后没有消息它的列队中等待
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CTLCOLORMSGBOX">
+             <summary>
+            在windows绘制消息框前发送此消息给消息框的所有者窗口，通过响应这条消息，所有者窗口可以通过使用给定的相关显示设备的句柄来设置消息框的文本和背景颜色
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CTLCOLOREDIT">
+             <summary>
+            当一个编辑型控件将要被绘制时发送此消息给它的父窗口通过响应这条消息，所有者窗口可以通过使用给定的相关显示设备的句柄来设置编辑框的文本和背景颜色
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CTLCOLORLISTBOX">
+             <summary>
+            当一个列表框控件将要被绘制前发送此消息给它的父窗口通过响应这条消息，所有者窗口可以通过使用给定的相关显示设备的句柄来设置列表框的文本和背景颜色
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CTLCOLORBTN">
+             <summary>
+            当一个按钮控件将要被绘制时发送此消息给它的父窗口通过响应这条消息，所有者窗口可以通过使用给定的相关显示设备的句柄来设置按纽的文本和背景颜色
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CTLCOLORDLG">
+             <summary>
+            当一个对话框控件将要被绘制前发送此消息给它的父窗口通过响应这条消息，所有者窗口可以通过使用给定的相关显示设备的句柄来设置对话框的文本背景颜色
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CTLCOLORSCROLLBAR">
+             <summary>
+            当一个滚动条控件将要被绘制时发送此消息给它的父窗口通过响应这条消息，所有者窗口可以通过使用给定的相关显示设备的句柄来设置滚动条的背景颜色
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CTLCOLORSTATIC">
+             <summary>
+            当一个静态控件将要被绘制时发送此消息给它的父窗口通过响应这条消息，所有者窗口可以 通过使用给定的相关显示设备的句柄来设置静态控件的文本和背景颜色
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_MOUSEWHEEL">
+             <summary>
+            当鼠标轮子转动时发送此消息个当前有焦点的控件
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_MBUTTONDBLCLK">
+             <summary>
+            双击鼠标中键
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_MBUTTONUP">
+             <summary>
+            释放鼠标中键
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_MOUSEMOVE">
+             <summary>
+            移动鼠标时发生，同WM_MOUSEFIRST
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_LBUTTONDOWN">
+             <summary>
+            按下鼠标左键
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_LBUTTONUP">
+             <summary>
+            释放鼠标左键
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_LBUTTONDBLCLK">
+             <summary>
+            双击鼠标左键
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_RBUTTONDOWN">
+             <summary>
+            按下鼠标右键
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_RBUTTONUP">
+             <summary>
+            释放鼠标右键
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_RBUTTONDBLCLK">
+             <summary>
+            双击鼠标右键
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_MBUTTONDOWN">
+             <summary>
+            按下鼠标中键
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_USER">
+            <summary>
+            鼠标事件
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.MK_LBUTTON">
+            <summary>
+            按键消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.MK_RBUTTON">
+            <summary>
+            按键消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.MK_SHIFT">
+            <summary>
+            按键消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.MK_CONTROL">
+            <summary>
+            按键消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.MK_MBUTTON">
+            <summary>
+            按键消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.MK_XBUTTON1">
+            <summary>
+            按键消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.MK_XBUTTON2">
+            <summary>
+            按键消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CREATE">
+             <summary>
+            创建一个窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_DESTROY">
+             <summary>
+            当一个窗口被破坏时发送
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_MOVE">
+             <summary>
+            移动一个窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SIZE">
+             <summary>
+            改变一个窗口的大小
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_ACTIVATE">
+             <summary>
+            一个窗口被激活或失去激活状态
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SETFOCUS">
+             <summary>
+            一个窗口获得焦点
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_KILLFOCUS">
+             <summary>
+            一个窗口失去焦点
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_ENABLE">
+             <summary>
+            一个窗口改变成Enable状态
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SETREDRAW">
+             <summary>
+            设置窗口是否能重画
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SETTEXT">
+             <summary>
+            应用程序发送此消息来设置一个窗口的文本
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_GETTEXT">
+             <summary>
+            应用程序发送此消息来复制对应窗口的文本到缓冲区
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_GETTEXTLENGTH">
+             <summary>
+            得到与一个窗口有关的文本的长度（不包含空字符）
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_PAINT">
+             <summary>
+            要求一个窗口重画自己
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CLOSE">
+             <summary>
+            当一个窗口或应用程序要关闭时发送一个信号
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_QUERYENDSESSION">
+             <summary>
+            当用户选择结束对话框或程序自己调用ExitWindows函数
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_QUIT">
+             <summary>
+            用来结束程序运行
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_QUERYOPEN">
+             <summary>
+            当用户窗口恢复以前的大小位置时，把此消息发送给某个图标
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_ERASEBKGND">
+             <summary>
+            当窗口背景必须被擦除时（例在窗口改变大小时）
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SYSCOLORCHANGE">
+             <summary>
+            当系统颜色改变时，发送此消息给所有顶级窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_ENDSESSION">
+             <summary>
+            当系统进程发出WM_QUERYENDSESSION消息后，此消息发送给应用程序，通知它对话是否结束
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SHOWWINDOW">
+             <summary>
+            当隐藏或显示窗口是发送此消息给这个窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_ACTIVATEAPP">
+             <summary>
+            发此消息给应用程序哪个窗口是激活的，哪个是非激活的
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_FONTCHANGE">
+             <summary>
+            当系统的字体资源库变化时发送此消息给所有顶级窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_TIMECHANGE">
+             <summary>
+            当系统的时间变化时发送此消息给所有顶级窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CANCELMODE">
+             <summary>
+            发送此消息来取消某种正在进行的摸态（操作）
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SETCURSOR">
+             <summary>
+            如果鼠标引起光标在某个窗口中移动且鼠标输入没有被捕获时，就发消息给某个窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_MOUSEACTIVATE">
+             <summary>
+            当光标在某个非激活的窗口中而用户正按着鼠标的某个键发送此消息给//当前窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CHILDACTIVATE">
+             <summary>
+            发送此消息给MDI子窗口//当用户点击此窗口的标题栏，或//当窗口被激活，移动，改变大小
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_QUEUESYNC">
+             <summary>
+            此消息由基于计算机的训练程序发送，通过WH_JOURNALPALYBACK的hook程序分离出用户输入消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_GETMINMAXINFO">
+             <summary>
+            此消息发送给窗口当它将要改变大小或位置
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_PAINTICON">
+             <summary>
+            发送给最小化窗口当它图标将要被重画
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_ICONERASEBKGND">
+             <summary>
+            此消息发送给某个最小化窗口，仅//当它在画图标前它的背景必须被重画
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NEXTDLGCTL">
+             <summary>
+            发送此消息给一个对话框程序去更改焦点位置
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SPOOLERSTATUS">
+             <summary>
+            每当打印管理列队增加或减少一条作业时发出此消息 
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_DRAWITEM">
+             <summary>
+            当button，combobox，listbox，menu的可视外观改变时发送
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_MEASUREITEM">
+             <summary>
+            当button, combo box, list box, list view control, or menu item 被创建时
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_VKEYTOITEM">
+             <summary>
+            此消息有一个LBS_WANTKEYBOARDINPUT风格的发出给它的所有者来响应WM_KEYDOWN消息 
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CHARTOITEM">
+             <summary>
+            此消息由一个LBS_WANTKEYBOARDINPUT风格的列表框发送给他的所有者来响应WM_CHAR消息 
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SETFONT">
+             <summary>
+            当绘制文本时程序发送此消息得到控件要用的颜色
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_GETFONT">
+             <summary>
+            应用程序发送此消息得到当前控件绘制文本的字体
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SETHOTKEY">
+             <summary>
+            应用程序发送此消息让一个窗口与一个热键相关连 
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_GETHOTKEY">
+             <summary>
+            应用程序发送此消息来判断热键与某个窗口是否有关联
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_QUERYDRAGICON">
+             <summary>
+            此消息发送给最小化窗口，当此窗口将要被拖放而它的类中没有定义图标，应用程序能返回一个图标或光标的句柄，当用户拖放图标时系统显示这个图标或光标
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_COMPAREITEM">
+             <summary>
+            发送此消息来判定combobox或listbox新增加的项的相对位置
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_COMPACTING">
+             <summary>
+            显示内存已经很少了
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_WINDOWPOSCHANGING">
+             <summary>
+            发送此消息给那个窗口的大小和位置将要被改变时，来调用setwindowpos函数或其它窗口管理函数
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_WINDOWPOSCHANGED">
+             <summary>
+            发送此消息给那个窗口的大小和位置已经被改变时，来调用setwindowpos函数或其它窗口管理函数
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_POWER">
+             <summary>
+            当系统将要进入暂停状态时发送此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_COPYDATA">
+             <summary>
+            当一个应用程序传递数据给另一个应用程序时发送此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_CANCELJOURNA">
+             <summary>
+            当某个用户取消程序日志激活状态，提交此消息给程序
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NOTIFY">
+             <summary>
+            当某个控件的某个事件已经发生或这个控件需要得到一些信息时，发送此消息给它的父窗口 
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_INPUTLANGCHANGEREQUEST">
+             <summary>
+            当用户选择某种输入语言，或输入语言的热键改变
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_INPUTLANGCHANGE">
+             <summary>
+            当平台现场已经被改变后发送此消息给受影响的最顶级窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_TCARD">
+             <summary>
+            当程序已经初始化windows帮助例程时发送此消息给应用程序
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_HELP">
+             <summary>
+            此消息显示用户按下了F1，如果某个菜单是激活的，就发送此消息个此窗口关联的菜单，否则就发送给有焦点的窗口，如果//当前都没有焦点，就把此消息发送给//当前激活的窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_USERCHANGED">
+             <summary>
+            当用户已经登入或退出后发送此消息给所有的窗口，//当用户登入或退出时系统更新用户的具体设置信息，在用户更新设置时系统马上发送此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NOTIFYFORMAT">
+             <summary>
+            公用控件，自定义控件和他们的父窗口通过此消息来判断控件是使用ANSI还是UNICODE结构
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_STYLECHANGING">
+             <summary>
+            当调用SETWINDOWLONG函数将要改变一个或多个 窗口的风格时发送此消息给那个窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_STYLECHANGED">
+             <summary>
+            当调用SETWINDOWLONG函数一个或多个 窗口的风格后发送此消息给那个窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_DISPLAYCHANGE">
+             <summary>
+            当显示器的分辨率改变后发送此消息给所有的窗口
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_GETICON">
+             <summary>
+            此消息发送给某个窗口来返回与某个窗口有关连的大图标或小图标的句柄
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_SETICON">
+             <summary>
+            程序发送此消息让一个新的大图标或小图标与某个窗口关联
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCCREATE">
+             <summary>
+            当某个窗口第一次被创建时，此消息在WM_CREATE消息发送前发送
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCDESTROY">
+             <summary>
+            此消息通知某个窗口，非客户区正在销毁 
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCCALCSIZE">
+             <summary>
+            当某个窗口的客户区域必须被核算时发送此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCHITTEST">
+             <summary>
+            移动鼠标，按住或释放鼠标时发生
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCPAINT">
+             <summary>
+            程序发送此消息给某个窗口当它（窗口）的框架必须被绘制时
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCACTIVATE">
+             <summary>
+            此消息发送给某个窗口仅当它的非客户区需要被改变来显示是激活还是非激活状态
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_GETDLGCODE">
+             <summary>
+            发送此消息给某个与对话框程序关联的控件，widdows控制方位键和TAB键使输入进入此控件通过应
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCMOUSEMOVE">
+             <summary>
+            当光标在一个窗口的非客户区内移动时发送此消息给这个窗口 非客户区为：窗体的标题栏及窗 的边框体
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCLBUTTONDOWN">
+             <summary>
+            当光标在一个窗口的非客户区同时按下鼠标左键时提交此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCLBUTTONUP">
+             <summary>
+            当用户释放鼠标左键同时光标某个窗口在非客户区十发送此消息 
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCLBUTTONDBLCLK">
+             <summary>
+            当用户双击鼠标左键同时光标某个窗口在非客户区十发送此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCRBUTTONDOWN">
+             <summary>
+            当用户按下鼠标右键同时光标又在窗口的非客户区时发送此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCRBUTTONUP">
+             <summary>
+            当用户释放鼠标右键同时光标又在窗口的非客户区时发送此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCRBUTTONDBLCLK">
+             <summary>
+            当用户双击鼠标右键同时光标某个窗口在非客户区十发送此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCMBUTTONDOWN">
+             <summary>
+            当用户按下鼠标中键同时光标又在窗口的非客户区时发送此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCMBUTTONUP">
+             <summary>
+            当用户释放鼠标中键同时光标又在窗口的非客户区时发送此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.WM_NCMBUTTONDBLCLK">
+             <summary>
+            当用户双击鼠标中键同时光标又在窗口的非客户区时发送此消息
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.Mouse_Move">
+            <summary>
+            鼠标消息类型
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.Mouse_LeftDown">
+            <summary>
+            鼠标消息类型
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.Mouse_LeftUp">
+            <summary>
+            鼠标消息类型
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.Mouse_RightDown">
+            <summary>
+            鼠标消息类型
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.Mouse_RightUp">
+            <summary>
+            鼠标消息类型
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.Mouse_MiddleDown">
+            <summary>
+            鼠标消息类型
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.Mouse_MiddleUp">
+            <summary>
+            鼠标消息类型
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.Mouse_Wheel">
+            <summary>
+            鼠标消息类型
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.Mouse_Absolute">
+            <summary>
+            鼠标消息类型
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.KEYEVENTF_EXTENDEDKEY">
+            <summary>
+            键盘操作
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.KEYEVENTF_KEYUP">
+            <summary>
+            键盘操作
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.KEYEVENTF_KEYDOWN">
+            <summary>
+            键盘操作
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_HIDE">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_SHOWNORMAL">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_SHOWMINIMIZED">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_SHOWMAXIMIZED">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_MAXIMIZE">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_SHOWNOACTIVATE">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_SHOW">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_MINIMIZE">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_SHOWMINNOACTIVE">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_SHOWNA">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_RESTORE">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_SHOWDEFAULT">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_FORCEMINIMIZE">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiCode.SW_MAX">
+            <summary>
+            窗体显示
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.HelpForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.HelpForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ECSTOOL.HelpForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ServerList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ECSTOOL.ServerList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerInfo.#ctor(System.String)">
+            <summary>
+            原始配置行
+            </summary>
+            <param name="serverInfo"></param>
+        </member>
+        <member name="M:ECSTOOL.ServerInfo.#ctor(System.String,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Windows ServerInfo
+            </summary>
+            <param name="ip"></param>
+            <param name="group"></param>
+            <param name="serverPort"></param>
+            <param name="senderPort"></param>
+            <param name="token"></param>
+            <param name="homePath"></param>
+        </member>
+        <member name="M:ECSTOOL.ServerInfo.#ctor(System.String,System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Linux ServerInfo
+            </summary>
+            <param name="ip"></param>
+            <param name="group"></param>
+            <param name="sshPort"></param>
+            <param name="user"></param>
+            <param name="password"></param>
+            <param name="homePath"></param>
+        </member>
+        <member name="M:ECSTOOL.ServerInfo.SaveServerInfo(System.String)">
+            <summary>
+            保存配置
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ECSTOOL.CommandForm.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.CommandForm.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ECSTOOL.CommandForm.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.ClientReceiver">
+             <summary>
+             类 名 称：Socket 数据包接收器类 ClientReceiver
+             主要功能：
+             编 写 者：HuLihui
+             创建日期：2005-11-23
+             修改日期：2006-04-13, 2006-05-05
+             框架版本：2008-10-05（用于技术探讨，便于了解框架）
+             说    明：1) 代码编译没有错误，但省略了许多内容
+                       2) 原代码超过3K，可能有些地方删减欠妥，请留言探讨
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.StartReceiver">
+            <summary>
+             启动接收器
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.StartAllReceiver">
+            <summary>
+             启动接收器
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.CloseAllSession">
+            <summary>
+             关闭全部客户端会话，并做关闭标记
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.CloseOneSession(System.String)">
+            <summary>
+            直接关闭一个客户端会话
+            </summary>
+            <param name="sessionIP"></param>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.SendData(System.String,System.Byte[])">
+            <summary>
+             对 ID 号的 session 发送包信息
+            </summary>
+            <param name="sessionIP"></param>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.SendBroadcastData(System.Byte[])">
+            <summary>
+             对 ID 号的 session 发送包信息
+            </summary>
+            <param name="sessionID"></param>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.ReceiveFile(System.String,System.String,System.String,System.Int64,System.Int32,System.Int32)">
+            <summary>
+             对 ID 号的 session 接收文件
+            </summary>
+            <param name="sessionIP"></param>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.SendFile(System.String,System.String,System.String,System.Int64,System.Int32,System.Int32)">
+            <summary>
+             对 ID 号的 session 发送文件
+            </summary>
+            <param name="sessionIP"></param>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.CloseDatabase">
+            <summary>
+            清理数据库资源
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.CheckSameClientIP(System.Net.Sockets.Socket)">
+            <summary>
+            判断重复IP地址
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.ConnectOneServer(System.String)">
+            <summary>
+            连接一个服务器
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.ConnectAllServer(System.Object)">
+            <summary>
+            连接所有服务器，由于要用线程池，故带一个参数
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.CheckClientState(System.Object)">
+            <summary>
+            检查客户端状态（扫描方式，若长时间无数据，则断开）
+            </summary>
+        </member>
+        <!-- 对于成员“M:ECSTOOL.ClientReceiver.ResolveBuffer(ECSTOOL.TSession,System.Int32)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:ECSTOOL.ClientReceiver.AnalyzeOneDatagram(ECSTOOL.TSession,System.Int32,System.Int32)”忽略有格式错误的 XML 注释 -->
+        <member name="M:ECSTOOL.ClientReceiver.HandleDatagrams(System.Object)">
+            <summary>
+            处理数据包队列，由于要用线程池，故带一个参数
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.HandleOneDatagram">
+            <summary>
+            处理一个包数据，包括：验证、存储
+            分解加入命令行队列
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ClientReceiver.ResponseDatagrams(System.Object)">
+            <summary>
+            处理数据包队列，由于要用线程池，故带一个参数
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.Program.Main(System.String[])">
+            <summary>
+            应用程序的主入口点。
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.Program.CommandExec(System.String[])">
+            <summary>
+            命令行支持
+            </summary>
+            <param name="args">-log "D:\\log_wugang.txt" -py "C:\\Users\\NHN\\Documents\\Visual Studio 2010\\Projects\\ECSTOOL\\ECSTOOL\\bin\Debug\\Scripts\\baidu1.py"</param>
+        </member>
+        <member name="M:ECSTOOL.MainFrame.LinuxUploadFile(System.String[],System.String,System.String[])">
+            <summary>
+            Linux文件上传
+            </summary>
+            <param name="etcinfo"></param>
+            <param name="file"></param>
+            <param name="dirs"></param>
+        </member>
+        <member name="M:ECSTOOL.MainFrame.LinuxDownloadFile(System.String[],System.String,System.String[])">
+            <summary>
+            Linux文件下载
+            </summary>
+            <param name="etcinfo"></param>
+            <param name="file"></param>
+            <param name="dirs"></param>
+        </member>
+        <member name="M:ECSTOOL.MainFrame.SendFile(System.Object)">
+            <summary>
+            Windows文件发送
+            </summary>
+            <param name="CommandContent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.MainFrame.DownloadFile(System.Object)">
+            <summary>
+            Windows文件下载
+            </summary>
+            <param name="CommandContent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.MainFrame.HandleMessage(System.Object)">
+            <summary>
+            包处理线程
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:ECSTOOL.MainFrame.GetMessage(System.Object)">
+            <summary>
+            包同步线程
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="F:ECSTOOL.MainFrame.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.MainFrame.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ECSTOOL.MainFrame.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.ExtractIcon">
+            <summary>
+            获取文件对应的ICO图标
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ExtractIcon.GetIcon(System.String,System.Boolean)">
+            <summary>
+            Get the associated Icon for a file or application, this method always returns
+            an icon.  If the strPath is invalid or there is no idonc the default icon is returned
+            </summary>
+            <param name="strPath">full path to the file</param>
+            <param name="bSmall">if true, the 16x16 icon is returned otherwise the 32x32</param>
+            <returns></returns>
+        </member>
+        <member name="T:ECSTOOL.FileIcon">
+            <summary>
+            获取文件对应的ICO图标
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.SshServer.StartWork">
+            <summary>
+             启动接收器
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.SshServer.ConnectAllServer(System.Object)">
+            <summary>
+            连接所有服务器，由于要用线程池，故带一个参数
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.SshServer.ConnectOneServer(System.String)">
+            <summary>
+            连接一个服务器
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.SshServer.CheckClientState(System.Object)">
+            <summary>
+            检查客户端状态（扫描方式，若长时间无数据，则断开）
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.SshServer.RequestDatagrams(System.Object)">
+            <summary>
+            处理数据包队列，由于要用线程池，故带一个参数
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.SshServer.BroadcastDatagrams(System.Object)">
+            <summary>
+            处理数据包队列，由于要用线程池，故带一个参数
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.SshServer.CloseAllSession">
+            <summary>
+             关闭全部客户端会话，并做关闭标记
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.SshServer.CloseOneSession(System.String)">
+            <summary>
+            直接关闭一个客户端会话
+            </summary>
+            <param name="sessionIP"></param>
+        </member>
+        <member name="M:ECSTOOL.SshServer.LCheckDirectory(System.String,System.String)">
+            <summary>
+            文件夹是否存在
+            </summary>
+            <param name="IP"></param>
+            <param name="DirPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.SshServer.LCheckFile(System.String,System.String,System.Int64,System.Int32)">
+            <summary>
+            文件是否存在
+            </summary>
+            <param name="IP"></param>
+            <param name="FilePath"></param>
+            <param name="Size">最小大小</param>
+            <param name="TimeOut"></param>
+            <returns>文件大小</returns>
+        </member>
+        <member name="M:ECSTOOL.SshServer.MoveSendFile(System.String,System.String,System.Int64,System.String[],System.Int32)">
+            <summary>
+            发送文件后续
+            </summary>
+            <param name="ip"></param>
+            <param name="name"></param>
+            <param name="size"></param>
+            <param name="dirs"></param>
+            <param name="timeout"></param>
+        </member>
+        <member name="T:ECSTOOL.SshReader">
+            <summary>
+            ssh协议
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.SshReader.ClearMsg">
+            <summary>
+            格式化
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.ScpClient_Ex">
+            <summary>
+            文件传输
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.TxtFileEncoding">
+            <summary>  
+            用于取得一个文本文件的编码方式(Encoding)。  
+            </summary>  
+        </member>
+        <member name="M:ECSTOOL.TxtFileEncoding.GetEncoding(System.String)">
+            <summary>  
+            取得一个文本文件的编码方式。如果无法在文件头部找到有效的前导符，Encoding.Default将被返回。  
+            </summary>  
+            <param name="fileName">文件名。</param>  
+            <returns></returns>  
+        </member>
+        <member name="M:ECSTOOL.TxtFileEncoding.GetEncoding(System.IO.FileStream)">
+            <summary>  
+            取得一个文本文件流的编码方式。  
+            </summary>  
+            <param name="stream">文本文件流。</param>  
+            <returns></returns>  
+        </member>
+        <member name="M:ECSTOOL.TxtFileEncoding.GetEncoding(System.String,System.Text.Encoding)">
+            <summary>  
+            取得一个文本文件的编码方式。  
+            </summary>  
+            <param name="fileName">文件名。</param>  
+            <param name="defaultEncoding">默认编码方式。当该方法无法从文件的头部取得有效的前导符时，将返回该编码方式。</param>  
+            <returns></returns>  
+        </member>
+        <member name="M:ECSTOOL.TxtFileEncoding.GetEncoding(System.IO.FileStream,System.Text.Encoding)">
+            <summary>  
+            取得一个文本文件流的编码方式。  
+            </summary>  
+            <param name="stream">文本文件流。</param>  
+            <param name="defaultEncoding">默认编码方式。当该方法无法从文件的头部取得有效的前导符时，将返回该编码方式。</param>  
+            <returns></returns>  
+        </member>
+        <member name="M:ECSTOOL.TxtFileEncoding.GetEncoding(System.IO.Stream)">
+            <summary>  
+            通过给定的文件流，判断文件的编码类型  
+            </summary>  
+            <param name="fs">文件流</param>  
+            <returns>文件的编码类型</returns>  
+        </member>
+        <member name="M:ECSTOOL.TxtFileEncoding.IsUTF8Bytes(System.Byte[])">
+            <summary>  
+            判断是否是不带 BOM 的 UTF8 格式  
+            </summary>  
+            <param name="data"></param>  
+            <returns></returns>  
+        </member>
+        <member name="T:ECSTOOL.ApiMethod">
+            <summary>
+            WindowsAPI常见操作封装
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.ApiMethod.SRCCOPY">
+            <summary>
+            BitBlt dwRop parameter
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.AnyPopup">
+            <summary>
+            如果一个弹出式窗口存在，返回值为非零，即使该窗口被其他窗口完全覆盖。如果弹出式窗口不存在，返回值为零。 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetWindowText(System.IntPtr,System.Text.StringBuilder,System.Int32)">
+            <summary>
+            得到窗体文本
+            </summary>
+            <param name="hWnd"></param>
+            <param name="lpString"></param>
+            <param name="nMaxCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.EnumThreadWindows(System.IntPtr,ECSTOOL.ApiMethod.CallBack,System.Int32)">
+            <summary>
+            枚举一个父窗口的所有线程
+            </summary>
+            <param name="dwThreadId"></param>
+            <param name="lpfn"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.EnumChildWindows(System.IntPtr,ECSTOOL.ApiMethod.CallBack,System.Int32)">
+            <summary>
+            枚举一个父窗口的所有子窗口
+            </summary>
+            <param name="hWndParent"></param>
+            <param name="lpfn"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.PostMessage(System.IntPtr,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="hwnd"></param>
+            <param name="wMsg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SendMessageA(System.IntPtr,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="hwnd"></param>
+            <param name="wMsg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.String)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="hWnd"></param>
+            <param name="Msg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SendMessage(System.IntPtr,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="hWnd"></param>
+            <param name="Msg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="hWnd"></param>
+            <param name="Msg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="hWnd"></param>
+            <param name="Msg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetWindowTextLength(System.IntPtr)">
+            <summary>
+            获得窗体文本长度
+            </summary>
+            <param name="hWnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetParent(System.IntPtr)">
+            <summary>
+            获得父窗体句柄
+            </summary>
+            <param name="hWnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.FindWindow(System.String,System.String)">
+            <summary>
+            根据类名或窗体名称查找窗体句柄
+            </summary>
+            <param name="lpClassName"></param>
+            <param name="lpWindowName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.FindWindowEx(System.IntPtr,System.IntPtr,System.String,System.String)">
+            <summary>
+            查找窗体子控件句柄
+            </summary>
+            <param name="hwndParent"></param>
+            <param name="hwndChildAfter"></param>
+            <param name="lpszClass"></param>
+            <param name="lpszWindow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SetWindowPos(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            设置窗体显示位置
+            </summary>
+            <param name="hWnd"></param>
+            <param name="hWndInsertAfter"></param>
+            <param name="X"></param>
+            <param name="Y"></param>
+            <param name="cx"></param>
+            <param name="cy"></param>
+            <param name="uFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetWindowRect(System.IntPtr,System.Drawing.Rectangle@)">
+            <summary>
+            获得窗体大小 得到的矩形 为窗体起始 到结束的 坐标。
+            </summary>
+            <param name="hwnd">窗体句柄</param>
+            <param name="lpRect">装数据的矩形对象</param>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetWindow(System.IntPtr,System.Int32)">
+            <summary>
+            获得子窗体句柄
+            </summary>
+            <param name="hwnd"></param>
+            <param name="cmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetClientRect(System.IntPtr,System.Drawing.Rectangle@)">
+            <summary>
+            获得窗体 用户区域大小 其他同 GetWindowRect
+            </summary>
+            <param name="hwnd"></param>
+            <param name="lpRect"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetDlgItem(System.IntPtr,System.Int32)">
+            <summary>
+            获得子对话框句柄
+            </summary>
+            <param name="hwnd"></param>
+            <param name="cmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.WindowFromPoint(System.Drawing.Point)">
+            <summary>
+            通过全屏幕坐标获取控件句柄
+            </summary>
+            <param name="w">坐标</param>
+            <returns>坐标位置的控件句柄</returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.MoveWindow(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            移动窗体的Windows函数
+            </summary>
+            <param name="hWnd">窗体句柄</param>
+            <param name="x">新坐标起点x坐标</param>
+            <param name="y">先坐标末点y坐标</param>
+            <param name="nWidth">新宽度</param>
+            <param name="nHeight">新高度</param>
+            <param name="BRePaint">是否移动后重绘制窗体（如果选false会导致桌面窗体图像滞留）</param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.ShowWindow(System.IntPtr,System.Int32)">
+            <summary>
+            设置窗体显示方式，失败返回0
+            </summary>
+            <param name="hWnd"></param>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SetForegroundWindow(System.IntPtr)">
+            <summary>
+            设置窗体显示最前端
+            </summary>
+            <param name="hwnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetActiveWindow">
+            <summary>
+            获取当前活跃窗口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetForegroundWindow">
+            <summary>
+            获得最前端窗口句柄
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SetFocus(System.IntPtr)">
+            <summary>
+            使指定窗体获得键盘输入焦点
+            </summary>
+            <param name="hWnd">窗体句柄</param>
+            <returns>若函数调用成功，则返回原先拥有键盘焦点的窗口句柄。若hWnd参数无效或窗口未与调用线程的消息队列相关，则返回值为NULL</returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetFocus">
+            <summary>
+            获得焦点句柄
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetCapture">
+            <summary>
+            取得捕获了鼠标的窗口(如果存在)的句柄
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SetCursorPos(System.Int32,System.Int32)">
+            <summary>
+            移动鼠标到指定位置
+            </summary>
+            <param name="x">指定位置x坐标</param>
+            <param name="y">指定位置y坐标</param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.mouse_event(System.Int32,System.Int32,System.Int32,System.Int32,System.IntPtr)">
+            <summary>
+            鼠标事件
+            </summary>
+            <param name="dwFlags">事件名称</param>
+            <param name="dx">x位移</param>
+            <param name="dy">y位移</param>
+            <param name="dwData"></param>
+            <param name="dwExtraInfo"></param>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetLastActivePopup(System.IntPtr)">
+            <summary>
+            获取当前窗体最近一次活跃的窗口 获得messagebox
+            </summary>
+            <param name="hWnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetWindowLong(System.IntPtr,System.Int32)">
+            <summary>
+            获得窗口句柄的编号
+            </summary>
+            <param name="hWnd"></param>
+            <param name="nlndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetClassName(System.IntPtr,System.Text.StringBuilder,System.Int32)">
+            <summary>
+            得到此控件的类名
+            </summary>
+            <param name="hWnd"></param>
+            <param name="classname">接收数据的要首先给出空间</param>
+            <param name="nlndex">所要取得的最大字符数，如果设置为0 则什么都没有</param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.BitBlt(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.IntPtr,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            对指定的源设备环境区域中的像素进行位块（bit_block）转换，以传送到目标设备环境
+            </summary>
+            <param name="hObject"></param>
+            <param name="nXDest"></param>
+            <param name="nYDest"></param>
+            <param name="nWidth"></param>
+            <param name="nHeight"></param>
+            <param name="hObjectSource"></param>
+            <param name="nXSrc"></param>
+            <param name="nYSrc"></param>
+            <param name="dwRop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.CreateCompatibleBitmap(System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            GDI图形用户界面相关程序，包含的函数用来绘制图像和显示文字
+            </summary>
+            <param name="hDC"></param>
+            <param name="nWidth"></param>
+            <param name="nHeight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.CreateCompatibleDC(System.IntPtr)">
+            <summary>
+            GDI图形用户界面相关程序，包含的函数用来绘制图像和显示文字
+            </summary>
+            <param name="hDC"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.DeleteDC(System.IntPtr)">
+            <summary>
+            GDI图形用户界面相关程序，包含的函数用来绘制图像和显示文字
+            </summary>
+            <param name="hDC"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.DeleteObject(System.IntPtr)">
+            <summary>
+            GDI图形用户界面相关程序，包含的函数用来绘制图像和显示文字
+            </summary>
+            <param name="hObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SelectObject(System.IntPtr,System.IntPtr)">
+            <summary>
+            GDI图形用户界面相关程序，包含的函数用来绘制图像和显示文字
+            </summary>
+            <param name="hDC"></param>
+            <param name="hObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.keybd_event(System.Byte,System.Byte,System.Int32,System.Int32)">
+            <summary>
+            键盘事件
+            </summary>
+            <param name="bVk"></param>
+            <param name="bScan"></param>
+            <param name="dwFlags"></param>
+            <param name="dwExtralnfo"></param>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetSystemMetrics(System.Int32)">
+            <summary>
+            获取操作系统分辨率
+            </summary>
+            <param name="nIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetDesktopWindow">
+            <summary>
+            获取桌面上窗体句柄
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetWindowDC(System.IntPtr)">
+            <summary>
+            返回hWnd参数所指定的窗口的设备环境
+            </summary>
+            <param name="hWnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetWindowThreadProcessId(System.IntPtr,System.Int32@)">
+            <summary>
+            取得窗体进程ID
+            </summary>
+            <param name="hWnd"></param>
+            <param name="lpdwProcessId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.ReleaseDC(System.IntPtr,System.IntPtr)">
+            <summary>
+            函数释放设备上下文环境(DC)供其他应用程序使用
+            </summary>
+            <param name="hWnd"></param>
+            <param name="hDC"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.ExtractIconEx(System.String,System.Int32,System.IntPtr@,System.IntPtr@,System.Int32)">
+            <summary>
+            获取ico图标
+            </summary>
+            <param name="lpszFile"></param>
+            <param name="niconIndex"></param>
+            <param name="phiconLarge"></param>
+            <param name="phiconSmall"></param>
+            <param name="nIcons"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.KillProc(System.String)">
+            <summary>
+            杀掉指定进程
+            </summary>
+            <param name="proc_name"></param>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SetWindowCurrent(System.IntPtr)">
+              <summary>    
+              窗口置前    
+              </summary>    
+              <param   name="hWnd">窗口句柄</param>    
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetChildByID(System.IntPtr,System.Int32)">
+            <summary>
+            获取子控件的句柄
+            </summary>
+            <param name="parent">父窗体句柄</param>
+            <param name="nIndex">索引</param>
+            <returns></returns>
+            获取窗体上按钮的句柄，按钮上的文字为OK 
+            IntPtr hwnd_button = ApiMethod.FindWindowEx(mainWnd, new IntPtr(0), null, "OK");
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetStringText(System.IntPtr)">
+            <summary>
+            得到控件的文本内容
+            </summary>
+            <param name="txtHand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SendString(System.IntPtr,System.String)">
+            <summary>
+            向控件输入字符串
+            </summary>
+            <param name="hand"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SendStringXY(System.IntPtr,System.String,System.Int32,System.Int32)">
+            <summary>
+            模拟键盘向指定位置输入字符串
+            </summary>
+            <param name="hand"></param>
+            <param name="text"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.ClickPosXY(System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            指定位置单击事件
+            </summary>
+            <param name="parent"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetProcessMainFormHandle(System.String)">
+            <summary>
+            通过进程名获得主窗口句柄
+            </summary>
+            <param name="processName">进程名</param>
+            <returns>窗口句柄对象</returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.CaptureScreen">
+            <summary>
+            获得桌面的图像
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.windowFullScreen">
+            <summary>
+            获得桌面的图像
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.CaptureWindow(System.IntPtr)">
+            <summary>
+            通过窗体句柄获取此窗体的图像
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SendKeyup(System.String)">
+            <summary>
+            键盘弹起一个键
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.SendKeydown(System.String)">
+            <summary>
+            键盘按下一个键System.Windows.Forms.SendKeys.Send/SendWait
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.MouseDown(System.String)">
+            <summary>
+            鼠标按下
+            </summary>
+            <param name="button"></param>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.MouseUp(System.String)">
+            <summary>
+            鼠标弹起
+            </summary>
+            <param name="button"></param>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.MouseMove(System.Int32,System.Int32)">
+            <summary>
+            鼠标移动到指定坐标
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetSystemX">
+            <summary>
+            获取系统宽度度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ApiMethod.GetSystemY">
+            <summary>
+            获取系统高度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ECSTOOL.ApiMethod.CallBack">
+            <summary>
+            窗体子控件查找委托
+            </summary>
+            <param name="hwnd"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ECSTOOL.EncryDecryUtil">
+            <summary>
+            加密解密类
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.EncryDecryUtil.#ctor">
+            <summary>
+            初始化安全类
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.EncryDecryUtil.EncryptString(System.String,System.String)">
+            <summary>
+            加密字符串
+            </summary>
+            <param name="inputStr">输入字符串</param>
+            <param name="keyStr">密码，可以为""</param>
+            <returns>输出加密后字符串</returns>
+        </member>
+        <member name="M:ECSTOOL.EncryDecryUtil.DecryptString(System.String,System.String)">
+            <summary>
+            解密字符串
+            </summary>
+            <param name="inputStr">要解密的字符串</param>
+            <param name="keyStr">密钥</param>
+            <returns>解密后的结果</returns>
+        </member>
+        <member name="M:ECSTOOL.EncryDecryUtil.EncryptFile(System.String,System.String,System.String)">
+            <summary>
+            加密文件
+            </summary>
+            <param name="filePath">输入文件路径</param>
+            <param name="savePath">加密后输出文件路径</param>
+            <param name="keyStr">密码，可以为""</param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.EncryDecryUtil.DecryptFile(System.String,System.String,System.String)">
+            <summary>
+            解密文件
+            </summary>
+            <param name="filePath">输入文件路径</param>
+            <param name="savePath">解密后输出文件路径</param>
+            <param name="keyStr">密码，可以为""</param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.EncryDecryUtil.BEncryptFile(System.String,System.String,System.String)">
+            <summary>
+            加密文件
+            </summary>
+            <param name="filePath">输入文件路径</param>
+            <param name="savePath">加密后输出文件路径</param>
+            <param name="keyStr">密码，可以为""</param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.EncryDecryUtil.BDecryptFile(System.String,System.String,System.String)">
+            <summary>
+            解密文件
+            </summary>
+            <param name="filePath">输入文件路径</param>
+            <param name="savePath">解密后输出文件路径</param>
+            <param name="keyStr">密码，可以为""</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:ECSTOOL.PlugsForm.FindDocument(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="F:ECSTOOL.PlugsForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.PlugsForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ECSTOOL.PlugsForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.ScreenCapture">
+            
+            <summary>
+            提供捕获全屏或者一个不规则窗口函数，并保存。
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ScreenCapture.ScreenCut(System.String)">
+            <summary>
+            屏幕截图
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:ECSTOOL.ScreenCapture.CaptureScreen">
+            
+            <summary>
+            Creates an Image object containing a screen shot of the entire desktop?
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ScreenCapture.CaptureWindow(System.IntPtr)">
+            
+            <summary>
+            Creates an Image object containing a screen shot of a specific window?
+            </summary>
+            <param name="handle">The handle to the window. (In windows forms, this is obtained by the Handle property)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ScreenCapture.CaptureWindowToFile(System.IntPtr,System.String,System.Drawing.Imaging.ImageFormat)">
+            
+            <summary>
+            Captures a screen shot of a specific window, and saves it to a file?
+            </summary>
+            <param name="handle"></param>
+            <param name="filename"></param>
+            <param name="format"></param>
+        </member>
+        <member name="M:ECSTOOL.ScreenCapture.CaptureScreenToFile(System.String,System.Drawing.Imaging.ImageFormat)">
+            
+            <summary>
+            Captures a screen shot of the entire desktop, and saves it to a file?
+            </summary>
+            <param name="filename"></param>
+            <param name="format"></param>
+        </member>
+        <member name="T:ECSTOOL.ScreenCapture.GDI32">
+            
+            <summary>
+            Helper class containing Gdi32 API functions
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.ScreenCapture.User32">
+            
+            <summary>
+            Helper class containing User32 API functions
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.WinCMD">
+            <summary> 
+            Command 的摘要说明。 
+            </summary> 
+        </member>
+        <member name="M:ECSTOOL.WinCMD.StartProgram">
+            <summary>
+            线程启动软件
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.WinCMD.Execute">
+            <summary>
+            线程执行DOS命令
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.WinCMD.Execute(System.String)">
+            <summary>
+            dosCommand Dos命令语句
+            </summary>
+            <param name="dosCommand"></param>
+            <returns></returns>   
+        </member>
+        <member name="M:ECSTOOL.WinCMD.Execute(System.String,System.Int32)">
+            <summary>   
+            执行DOS命令，返回DOS命令的输出   
+            </summary>   
+            <param name="dosCommand">dos命令</param>   
+            <param name="milliseconds">等待命令执行的时间（单位：毫秒），   
+            如果设定为0，则无限等待</param>   
+            <returns>返回DOS命令的输出</returns>   
+        </member>
+        <member name="M:ECSTOOL.WinCMD.RunCmd(System.String)">
+            <summary> 
+            执行CMD语句 
+            </summary> 
+            <param name="cmd">要执行的CMD命令</param> 
+        </member>
+        <member name="M:ECSTOOL.WinCMD.RunProgram(System.String)">
+            <summary> 
+            打开软件 
+            </summary> 
+            <param name="exePath">软件路径加名称（.exe文件）</param> 
+        </member>
+        <member name="M:ECSTOOL.WinCMD.RunProgram(System.String,System.String)">
+            <summary> 
+            打开软件并执行命令（输入) 
+            </summary> 
+            <param name="exePath">软件路径加名称（.exe文件）</param> 
+            <param name="cmd">要执行的命令</param> 
+        </member>
+        <member name="M:ECSTOOL.WinCMD.StartExe(System.String)">
+            <summary>
+            打开软件
+            </summary>
+            <param name="exePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.WinCMD.StartExe(System.String,System.String)">
+            <summary>
+            打开软件（内置参数）
+            </summary>
+            <param name="exePath"></param>
+            <param name="argument"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ECSTOOL.LuaFunc">
+            <summary>  
+            Lua函数描述特性类  
+            </summary>  
+        </member>
+        <member name="T:ECSTOOL.LuaFramework">
+            <summary>  
+            Lua引擎  
+            </summary>  
+        </member>
+        <member name="M:ECSTOOL.LuaFramework.BindLuaApiClass(System.Object)">
+            <summary>  
+            注册lua函数  
+            </summary>  
+            <param name="pLuaAPIClass">lua函数类</param>  
+        </member>
+        <member name="M:ECSTOOL.LuaFramework.ExecuteFile(System.String)">
+            <summary>  
+            执行lua脚本文件  
+            </summary>  
+            <param name="luaFileName">脚本文件名</param>  
+        </member>
+        <member name="M:ECSTOOL.LuaFramework.ExecuteString(System.String)">
+            <summary>  
+            执行lua脚本内容  
+            </summary>  
+            <param name="luaCommand">lua指令</param>  
+        </member>
+        <member name="M:ECSTOOL.ComputerInfo.GetUserName">
+            <summary>
+            操作系统的登录用户名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ComputerInfo.GetSystemType">
+            <summary>
+            PC类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ComputerInfo.GetTotalPhysicalMemory">
+            <summary>
+            物理内存
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECSTOOL.ComputerInfo.GetComputerName">
+            <summary>
+            计算机名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ECSTOOL.MessageType.KEY">
+            <summary>
+            密钥
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.MessageType.StartKey">
+            <summary>
+            批量命令
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.MessageType.SUB_COMMAND">
+            <summary>
+            插件处理命令(抛出事件）
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.MessageType.OUTPUT_COMMAND">
+            <summary>
+            输出命令1
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.MessageType.OUTPUT_MESSAGE">
+            <summary>
+            输出命令2
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.MessageType.OUTPUT_LOG">
+            <summary>
+            输出命令4
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.MessageType.COMMAND_ENGION">
+            <summary>
+            输出命令4
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.MessageType.PUBLIC_IP">
+            <summary>
+            返回外网IP
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.MessageType.EXEC_WIN_API">
+            <summary>
+            系统命令
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.MessageType.START_ALL_SERVER">
+            <summary>
+            SERVER操作
+            </summary>       
+        </member>
+        <member name="F:ECSTOOL.MessageType.GET_SERVER_OSTYPE">
+            <summary>
+            工具命令
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.MessageType.GetCommandArray(System.String)">
+            <summary>
+            分解批量命令 
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.MessageType.GetCommandArray(System.String,System.String,System.String)">
+            <summary>
+            分解批量命令 
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.TDatagram">
+            <summary>
+            接收数据包类（框架）
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.TDatagram.#ctor(System.Byte[])">
+            <summary>
+            接收报文
+            </summary>
+            <param name="datagramBuffer"></param>
+        </member>
+        <member name="M:ECSTOOL.TDatagram.#ctor(System.String)">
+            <summary>
+            发送报文
+            </summary>
+            <param name="datagram"></param>
+        </member>
+        <member name="M:ECSTOOL.TDatagram.Clear">
+            <summary>
+            清除包缓冲区
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.TDatagram.EncryptDatagram">
+            <summary>
+            发送加密，_datagram --> DatagramBuffer
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.TDatagram.DecryptDatagram(System.Byte[])">
+            <summary>
+            接收解密，DatagramBuffer --> _datagram
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.TDatagram.CheckDatagramKind">
+            <summary>
+            判断数据包类型，包括判错
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.TDatagram.ResolveDatagram">
+            <summary>
+            解析数据包
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.TSession">
+            <summary>
+            Socket会话类 Session
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.TSession.CopyToDatagramBuffer(System.Int32,System.Int32)">
+            <summary>
+            拷贝接收缓冲区的数据到数据缓冲区（即多次读一个包文）
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.TDisconnectType">
+            <summary>
+            连接断开类型枚举 DisconectType
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.TSessionState">
+            <summary>
+            通信会话状态枚举 SessionState
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.SerializeObj">
+            <summary>
+            序列化和反序列化
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.SerializeObj.Serialize``1(``0)">
+            <summary>
+            序列化 对象到字符串
+            </summary>
+            <param name="obj">泛型对象</param>
+            <returns>序列化后的字符串</returns>
+        </member>
+        <member name="M:ECSTOOL.SerializeObj.Desrialize``1(``0,System.String)">
+            <summary>
+            反序列化 字符串到对象
+            </summary>
+            <param name="obj">泛型对象</param>
+            <param name="str">要转换为对象的字符串</param>
+            <returns>反序列化出来的对象</returns>
+        </member>
+        <member name="F:ECSTOOL.ServerOperator.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerOperator.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ECSTOOL.ServerOperator.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.CRC32">
+            <summary>
+            CRC32快速检测算法
+            本文来自CSDN博客，转载请标明出处：http://blog.csdn.net/ZZJ_4Ever/archive/2009/03/31/4038551.aspx
+            有稍作修改
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.Consts">
+            <summary>
+            一些常量和扩展方法
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.Consts.FileBlockHeader">
+            <summary>
+            文件区块数据标头
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.Consts.StringHeader">
+            <summary>
+            字符串信息标头
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.Consts.BlockSize">
+            <summary>
+            分块大小1MB
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.Consts.NetBlockMaxSize">
+            <summary>
+            网络上传送的数据包最大大小
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.Consts.DefaultIOBufferSize">
+            <summary>
+            默认磁盘缓存大小(单位:区块数)
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.Consts.Space">
+            <summary>
+            空格
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.Consts.SpaceReplacement">
+            <summary>
+            空格替代符
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.Consts.GetHash(System.Byte[])">
+            <summary>
+            获取校验值
+            </summary>
+            <param name="bytes">输入数据</param>
+            <returns>输出的校验值</returns>
+        </member>
+        <member name="M:ECSTOOL.Consts.BytesEqual(System.Byte[],System.Byte[])">
+            <summary>
+            比较两二进制数据内容是否完全相同(用于MD5值的比较)
+            </summary>
+            <param name="THIS">数据一</param>
+            <param name="obj">数据二</param>
+        </member>
+        <member name="M:ECSTOOL.Consts.ToBytes(System.String)">
+            <summary>
+            将指令字符串转化为二进制数据并添加标头
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.Consts.ToFTString(System.Byte[])">
+            <summary>
+            将二进制数据转化为指令字符串
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.Consts.DoReplace(System.String)">
+            <summary>
+            替换可能会对命令解析造成干扰的字符
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.Consts.DeReplace(System.String)">
+            <summary>
+            还原被替换的字符
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.FileBlock">
+            <summary>
+            文件区块类
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.FileBlock._Task">
+            <summary>
+            与该区块关联的传输对象
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.FileBlock._FileStream">
+            <summary>
+            与该区块关联的FileStream
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.FileBlock._Data">
+            <summary>
+            文件数据
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.FileBlock._DataLength">
+            <summary>
+            数据长度
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.FileBlock._DataHash">
+            <summary>
+            数据的Hash值
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileBlock.#ctor(ECSTOOL.FileTransmission,System.Int32,System.Boolean)">
+            <summary>
+            构造函数
+            用于从文件读入区块
+            </summary>
+            <param name="fStream">输入的文件流</param>
+            <param name="BlockIndex">分块位置</param>
+            <param name="ReadOnCreated">是否立即从文件读取数据</param>
+        </member>
+        <member name="M:ECSTOOL.FileBlock.#ctor(ECSTOOL.FileTransmission,System.Byte[])">
+            <summary>
+            构造函数
+            用于从二进制数据读入区块
+            </summary>
+            <param name="fStream">要保存的文件流</param>
+            <param name="ReceivedData">输入的二进制数据</param>
+        </member>
+        <member name="M:ECSTOOL.FileBlock.Read(System.Boolean)">
+            <summary>
+            从文件读入
+            </summary>
+            <param name="CalcHashAfterRead">是否在读取后立即计算校验值</param>
+            <returns>读取块的大小</returns>
+        </member>
+        <member name="M:ECSTOOL.FileBlock.CalcHash">
+            <summary>
+            计算校验值
+            </summary>
+            <returns>校验值</returns>
+        </member>
+        <member name="M:ECSTOOL.FileBlock.Write">
+            <summary>
+            将该区块写入文件
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileBlock.GetBytes">
+            <summary>
+            转化为二进制数据以传输
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ECSTOOL.FileBlock.Index">
+            <summary>
+            获取或设置该区块的序号(该区块在文件中的位置)
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileBlock.DataLength">
+            <summary>
+            获取该区块的数据长度
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileBlock.DataHash">
+            <summary>
+            获取该数据块的校验值
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmissionErrorOccurEventArgs.Continue">
+            <summary>
+            指示是否继续运行
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.FileBlockCollection">
+            <summary>
+            文件区块的抽象集合
+            之所以说抽象是因为该集合并不存储实际的区块(缓存区除外)
+            而是通过一个索引器来读写文件
+            并提供磁盘缓存
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.FileBlockCollection._Task">
+            <summary>
+            与该区块关联的传输对象
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.FileBlockCollection._FileStream">
+            <summary>
+            与该区块关联的FileStream
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.FileBlockCollection._IOBuffer">
+            <summary>
+            磁盘缓存区
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileBlockCollection.WriteAllBlock">
+            <summary>
+            将缓存中的区块全部写入磁盘
+            </summary>
+            <returns>写入的区块数量</returns>
+        </member>
+        <member name="M:ECSTOOL.FileBlockCollection.FillIOBuffer(System.Int32)">
+            <summary>
+            读取数据以填充缓存
+            </summary>
+            <param name="StartIndex">起始区块</param>
+            <returns>读取的区块数量</returns>
+        </member>
+        <member name="M:ECSTOOL.FileBlockCollection.BeginFillIOBuffer(System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            异步填充缓存
+            </summary>
+            <param name="StartIndex">起始区块</param>
+        </member>
+        <member name="M:ECSTOOL.FileBlockCollection.Write(ECSTOOL.FileBlock)">
+            <summary>
+            写入区块
+            </summary>
+            <param name="value">区块对象</param>
+        </member>
+        <member name="P:ECSTOOL.FileBlockCollection.EnabledIOBuffer">
+            <summary>
+            获取或设置一个值,该值指示是否启用磁盘缓存
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileBlockCollection.Finished">
+            <summary>
+            获取已接收或已发送的区块序号列表
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileBlockCollection.Exist">
+            <summary>
+            获取已存在(Hash成功)的区块序号列表
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileBlockCollection.Cast">
+            <summary>
+            获取被丢弃的区块序号列表
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileBlockCollection.Count">
+            <summary>
+            获取总区块数
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileBlockCollection.CountValid">
+            <summary>
+            获取有效区块数(已存在+已接收)
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileBlockCollection.Item(System.Int32)">
+            <summary>
+            读取或写入区块
+            </summary>
+            <param name="BlockIndex">区块序号</param>
+        </member>
+        <member name="F:ECSTOOL.FileTransmission._TotalBlock">
+            <summary>
+            总区块数
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.FileTransmission._LastBlockSize">
+            <summary>
+            最后一个区块的大小
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.FileTransmission._PriorBlockTime">
+            <summary>
+            上一个区块完成的时间
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="FilePath">文件路径</param>
+            <param name="FileName">文件名</param>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.InitializeReceiveBuf">
+            <summary>
+            初始化接收缓存
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.BeginReceive">
+            <summary>
+            开始异步接收
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.Start">
+            <summary>
+            开始传输
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.Stop(System.Boolean)">
+            <summary>
+            中止传输
+            </summary>
+            <param name="ShutDownSocket">是否关闭Socket</param>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.Stop">
+            <summary>
+            异步中止传输,不关闭Socket
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.WaitForExit">
+            <summary>
+            等待传输完成
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.WaitForExit(System.Int32,System.Boolean)">
+            <summary>
+            等待传输完成
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.WaitForExit(System.TimeSpan,System.Boolean)">
+            <summary>
+            等待传输完成
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.SendString(System.String)">
+            <summary>
+            同步发送字符串
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.SendStringAsync(System.String)">
+            <summary>
+            异步发送字符串并使用默认的回调方法
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileTransmission.BeginSendString(System.String,System.AsyncCallback,System.Object)">
+            <summary>
+            异步发送字符串并使用指定的的回调方法和参数
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.EnabledIOBuffer">
+            <summary>
+            获取或设置一个值,该值指示是否启用磁盘缓存
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.IOBufferSize">
+            <summary>
+            获取或设置磁盘缓存的大小(单位:区块数)
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.CurrentIOBufferSize">
+            <summary>
+            获取当前磁盘缓存中的区块数
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.Socket">
+            <summary>
+            获取或设置该传输的目标连接
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.FileStream">
+            <summary>
+            获取与此传输关联的文件流
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.FilePath">
+            <summary>
+            获取或设置文件路径
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.FileName">
+            <summary>
+            获取或设置文件名
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.FullFileName">
+            <summary>
+            获取或设置文件名(包括路径)
+            </summary>
+        </member>
+        <member name="E:ECSTOOL.FileTransmission.BlockFinished">
+            <summary>
+            一个区块完成时发生
+            </summary>
+        </member>
+        <member name="E:ECSTOOL.FileTransmission.AllFinished">
+            <summary>
+            全部完成时发生
+            </summary>
+        </member>
+        <member name="E:ECSTOOL.FileTransmission.ConnectLost">
+            <summary>
+            连接中断时发生
+            </summary>
+        </member>
+        <member name="E:ECSTOOL.FileTransmission.ErrorOccurred">
+            <summary>
+            出现错误时发生
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.IsAlive">
+            <summary>
+            获取一个值,该值指示传输是否正在进行
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.StartTime">
+            <summary>
+            获取传输开始的时间
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.TimePast">
+            <summary>
+            获取已用时
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.TimeRemaining">
+            <summary>
+            获取估计剩余时间
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.BlockAverSpeed">
+            <summary>
+            获取平均速率(区块/秒)
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.ByteAverSpeed">
+            <summary>
+            获取平均速率(字节/秒)
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.KByteAverSpeed">
+            <summary>
+            获取平均速率(千字节/秒)
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.ByteSpeed">
+            <summary>
+            获取瞬时速率(字节/秒)
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.KByteSpeed">
+            <summary>
+            获取瞬时速率(千字节/秒)
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.TotalSize">
+            <summary>
+            获取文件总长度
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.FinishedSize">
+            <summary>
+            获取已完成的数据长度
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.Progress">
+            <summary>
+            获取进度值(%)
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileTransmission.Blocks">
+            <summary>
+            获取该传输的区块集合
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.FileSender">
+            <summary>
+            发送端
+            传输前发送端创建该类实例
+            设置必要属性后
+            调用Start()方法开始传输
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileSender.BeginReceive">
+            <summary>
+            开始异步接收
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileSender.Start">
+            <summary>
+            开始传输
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileSender.SendBlock(System.Int32)">
+            <summary>
+            同步发送区块
+            </summary>
+            <param name="BlockIndex">区块序号</param>
+            <returns>发送的数据长度</returns>
+        </member>
+        <member name="M:ECSTOOL.FileSender.SendBlockAsync(System.Int32)">
+            <summary>
+            异步发送区块并使用默认的回调方法
+            </summary>
+            <param name="BlockIndex">区块序号</param>
+        </member>
+        <member name="M:ECSTOOL.FileSender.BeginSendBlock(System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            异步发送区块并使用指定的回调方法和参数
+            </summary>
+            <param name="BlockIndex">区块序号</param>
+        </member>
+        <member name="M:ECSTOOL.FileSender.OnCommandReceived(System.String)">
+            <summary>
+            命令处理
+            </summary>
+            <param name="str">收到的命令</param>
+            <returns>是否继续接收</returns>
+        </member>
+        <member name="E:ECSTOOL.FileSender.CommandReceived">
+            <summary>
+            接收到命令时发生
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileSender.TimeRemaining">
+            <summary>
+            获取估计剩余时间
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileSender.FinishedSize">
+            <summary>
+            获取已完成的数据长度
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.FileReceiver">
+            <summary>
+            接收端
+            传输前接收端创建该类实例
+            设置必要属性后
+            调用Start()方法开始传输
+            </summary>
+        </member>
+        <member name="F:ECSTOOL.FileReceiver._DownThread">
+            <summary>
+            下载线程
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileReceiver.BeginReceive">
+            <summary>
+            开始异步接收
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileReceiver.Start">
+            <summary>
+            开始传输
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileReceiver.Stop(System.Boolean)">
+            <summary>
+            中止传输
+            </summary>
+            <param name="ShutDownSocket">是否关闭Socket</param>
+        </member>
+        <member name="M:ECSTOOL.FileReceiver.GetFileName">
+            <summary>
+            从发送端获取文件名
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileReceiver.GetTotalBlock">
+            <summary>
+            从发送端获取区块总数
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileReceiver.GetLastBlockSize">
+            <summary>
+            从发送端获取最后一个区块的大小
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.FileReceiver.HashFile">
+            <summary>
+            校验文件
+            </summary>
+            <returns>损坏或尚未下载的区块序号列表</returns>
+        </member>
+        <member name="M:ECSTOOL.FileReceiver.DownLoad">
+            <summary>
+            接收整个文件
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileReceiver.TimeRemaining">
+            <summary>
+            获取估计剩余时间
+            </summary>
+        </member>
+        <member name="P:ECSTOOL.FileReceiver.FinishedSize">
+            <summary>
+            获取已完成的数据长度
+            </summary>
+        </member>
+        <member name="T:ECSTOOL.ServerReceiver">
+             <summary>
+             类 名 称：Socket 数据包接收器类 DatagramReceiver
+             主要功能：公路交通流量调查Socket数据接收接收器类
+             编 写 者：HuLihui
+             创建日期：2005-11-23
+             修改日期：2006-04-13, 2006-05-05
+             框架版本：2008-10-05（用于技术探讨，便于了解框架）
+             说    明：1) 代码编译没有错误，但省略了许多内容
+                       2) 原代码超过3K，可能有些地方删减欠妥，请留言探讨
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.StartReceiver">
+            <summary>
+             启动接收器
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.CloseAllSession">
+            <summary>
+             关闭全部客户端会话，并做关闭标记
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.CloseOneSession(System.String)">
+            <summary>
+            直接关闭一个客户端会话
+            </summary>
+            <param name="sessionIP"></param>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.SendData(System.String,System.Byte[])">
+            <summary>
+             对 ID 号的 session 发送包信息
+            </summary>
+            <param name="sessionIP"></param>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.SendBroadcastData(System.Byte[])">
+            <summary>
+             对 ID 号的 session 发送包信息
+            </summary>
+            <param name="sessionID"></param>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.ReceiveFile(System.String,System.String,System.String,System.Int64,System.Int32,System.Int32)">
+            <summary>
+             对 ID 号的 session 接收文件
+            </summary>
+            <param name="sessionIP"></param>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.SendFile(System.String,System.String,System.String,System.Int64,System.Int32,System.Int32)">
+            <summary>
+             对 ID 号的 session 发送文件
+            </summary>
+            <param name="sessionIP"></param>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.CreateReceiverSocket">
+            <summary>
+            创建接收服务器的 Socket, 并侦听客户端连接请求
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.CloseDatabase">
+            <summary>
+            清理数据库资源
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.ConnectDatabase">
+            <summary>
+            连接数据库
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.CheckSameClientIP(System.Net.Sockets.Socket)">
+            <summary>
+            判断重复IP地址
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.ListenClientRequest(System.Object)">
+            <summary>
+            循环侦听客户端请求，由于要用线程池，故带一个参数
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.CheckClientState(System.Object)">
+            <summary>
+            检查客户端状态（扫描方式，若长时间无数据，则断开）
+            </summary>
+        </member>
+        <!-- 对于成员“M:ECSTOOL.ServerReceiver.ResolveBuffer(ECSTOOL.TSession,System.Int32)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:ECSTOOL.ServerReceiver.AnalyzeOneDatagram(ECSTOOL.TSession,System.Int32,System.Int32)”忽略有格式错误的 XML 注释 -->
+        <member name="M:ECSTOOL.ServerReceiver.HandleDatagrams(System.Object)">
+            <summary>
+            处理数据包队列，由于要用线程池，故带一个参数
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.HandleOneDatagram">
+            <summary>
+            处理一个包数据，包括：验证、存储
+            分解加入命令行队列
+            </summary>
+        </member>
+        <member name="M:ECSTOOL.ServerReceiver.ResponseDatagrams(System.Object)">
+            <summary>
+            处理数据包队列，由于要用线程池，故带一个参数
+            </summary>
+        </member>
+    </members>
+</doc>

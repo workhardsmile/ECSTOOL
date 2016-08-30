@@ -1,0 +1,57 @@
+2013/01/11 11:11:52 [error] 4272#6780: *2 CreateFile() "C:\ECSTOOL\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1"
+2013/01/11 11:40:58 [notice] 3748#5104: signal process started
+2013/01/11 11:48:45 [notice] 6852#7808: signal process started
+2013/01/11 11:50:04 [notice] 6732#4900: signal process started
+2013/01/11 11:50:04 [error] 6732#4900: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 11:50:08 [error] 2468#3976: *4 CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1"
+2013/01/11 11:50:56 [notice] 5164#7644: signal process started
+2013/01/11 11:56:31 [notice] 2296#4320: signal process started
+2013/01/11 11:56:31 [error] 2296#4320: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 11:58:07 [notice] 7384#4528: signal process started
+2013/01/11 11:58:07 [notice] 804#4840: signal process started
+2013/01/11 12:01:20 [notice] 2756#3384: signal process started
+2013/01/11 12:01:20 [error] 2756#3384: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 12:07:11 [notice] 6880#5132: signal process started
+2013/01/11 12:07:11 [notice] 7560#4468: signal process started
+2013/01/11 12:08:41 [notice] 7916#5972: signal process started
+2013/01/11 12:08:41 [notice] 3384#2756: signal process started
+2013/01/11 12:14:41 [notice] 2604#7200: signal process started
+2013/01/11 12:14:41 [error] 2604#7200: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 12:14:41 [notice] 6244#4816: signal process started
+2013/01/11 12:14:41 [error] 6244#4816: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 12:16:59 [notice] 7996#2412: signal process started
+2013/01/11 12:16:59 [error] 7996#2412: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 13:28:29 [notice] 420#2656: signal process started
+2013/01/11 13:28:30 [notice] 4448#6256: signal process started
+2013/01/11 13:28:30 [error] 4448#6256: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 13:28:37 [notice] 7556#4344: signal process started
+2013/01/11 13:28:37 [error] 7556#4344: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 13:28:38 [notice] 360#2632: signal process started
+2013/01/11 13:28:38 [error] 360#2632: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 13:29:59 [notice] 2480#4792: signal process started
+2013/01/11 13:29:59 [error] 2480#4792: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 13:30:00 [notice] 2104#7792: signal process started
+2013/01/11 13:30:00 [error] 2104#7792: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 13:30:52 [notice] 2756#1752: signal process started
+2013/01/11 13:30:52 [error] 2756#1752: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 13:30:52 [notice] 4840#576: signal process started
+2013/01/11 13:30:52 [error] 4840#576: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 14:26:34 [notice] 3848#5496: signal process started
+2013/01/11 14:26:34 [error] 3848#5496: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 14:26:37 [notice] 3100#3576: signal process started
+2013/01/11 14:26:37 [error] 3100#3576: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 14:27:39 [notice] 6384#4540: signal process started
+2013/01/11 14:27:39 [error] 6384#4540: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 14:28:01 [notice] 2320#3632: signal process started
+2013/01/11 14:28:01 [error] 2320#3632: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 14:31:38 [notice] 5460#1924: signal process started
+2013/01/11 14:31:38 [error] 5460#1924: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 15:06:22 [notice] 4508#4284: signal process started
+2013/01/11 15:06:22 [error] 4508#4284: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 15:12:16 [notice] 5412#2788: signal process started
+2013/01/11 15:12:16 [error] 5412#2788: CreateFile() "C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2013/01/11 15:14:18 [notice] 7624#7680: signal process started
+2013/01/11 15:17:03 [notice] 5444#7100: signal process started
+2013/01/11 17:06:34 [notice] 7356#6312: signal process started
+2013/01/11 17:06:34 [error] 7356#6312: OpenEvent("Global\ngx_stop_2392") failed (2: The system cannot find the file specified)
+2013/01/11 17:07:10 [error] 6800#4872: *3 CreateFile() "D:\NHN\ECSTOOL20130111\ECSTOOL\bin\Debug\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1"

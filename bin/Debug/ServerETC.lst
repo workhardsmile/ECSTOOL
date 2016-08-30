@@ -1,0 +1,6 @@
+# 6个字段（分号分隔）
+# IP; 分组; 系统类型（0-Linux,1-Windows);[ssh端口](Linux) [Server端口 & Sender端口](Windows); [用户名 & 密码 ](Linux 加密) [token] (windows); 共享根目录 
+
+127.0.0.1; TOOL; 1; 18888 & 18889; 188AAEB27BC569F3A3C9B12558DDC90E; C:\
+10.34.130.44;CWM;0;22;C74A477B36B34D6AEC5F353662215868;/home
+10.34.130.62;TTT;1;18888&18889;188AAEB27BC569F3A3C9B12558DDC90E;C:\\

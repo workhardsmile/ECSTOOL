@@ -1,0 +1,35 @@
+;下面的注释包含自解压脚本命令
+
+Path=ECSTOOL
+SavePath
+Setup=dotNetFx40_Full_setup.exe
+Overwrite=1
+License=
+{
+【关于程序】<br /><br />
+程序版本：    1.1.0.0免费版<br />
+作者：        沃克哈德<br />
+联系方式：<br />    
+  *workhard_smile@163.com (email)<br />
+  *http://blog.csdn.net/w565911788 (csdn)<br /><br />
+Copyright ? 沃克哈德. All Rights Reserved.<br />
+*特别提示： 可通过联系方式发送Bug和改善建议,获取后续升级版本。
+版本。<br /><br />
+
+【使用说明】<br /><br />
+1.  需要环境 : <br />
+.NET Framework4.0或以上（Windows）；SSH服务（Linux）<br /><br />
+2.  集群部署 :<br />
+Windows开启本程序（对等，token校验），Linux开启SSH服务（协议）。<br /><br />
+3.  功能特点 :<br />
+（1） 支持Windows、Linux平台<br />
+（2）支持公网、私网复合网络<br />
+（3）本地及远程命令引擎<br />
+（4）文件批量发送下载<br />
+（5）自动化脚本任务定制<br />
+（6）动态插件扩展<br />
+（7）工具平台集成<br />
+（8）……<br />
+}
+Shortcut=D, ECSTOOL.exe, , 服务器集群管理平台, 服务器集群管理平台, 
+

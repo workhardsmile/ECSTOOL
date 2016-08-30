@@ -1,0 +1,6294 @@
+
+[10:33:14] SYS_START: 系统启动成功！
+[10:33:15] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:33:15] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:33:15] 10.34.130.62:
+[10:33:15] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:33:15] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:33:28] 127.0.0.1:send_mail{@qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true@}
+[10:33:28] 10.34.130.62:127.0.0.1:send_mail{@qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true@}
+[10:33:28] 10.34.130.62:qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true
+[10:34:15] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:34:17] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:34:17] 10.34.130.62:
+[10:34:18] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:34:19] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:34:26] 127.0.0.1:send_mail{@qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true@}
+[10:34:27] 10.34.130.62:127.0.0.1:send_mail{@qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true@}
+[10:34:27] 10.34.130.62:qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true
+[10:35:15] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:35:17] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:35:18] 10.34.130.62:
+[10:35:19] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:35:20] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:36:13] 127.0.0.1:send_mail{@qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true@}
+[10:36:13] 10.34.130.62:127.0.0.1:send_mail{@qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true@}
+[10:36:14] 10.34.130.62:qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewal|fuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true
+[10:37:06] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:37:09] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+
+[10:37:10] 10.34.130.62:
+[10:37:12] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:37:13] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:37:48] 127.0.0.1:send_mail{@qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true@}
+[10:37:49] 10.34.130.62:127.0.0.1:send_mail{@qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true@}
+[10:37:50] 10.34.130.62:qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true
+[10:38:07] <qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true> 全部邮件已发送。
+[10:38:09] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:38:14] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:38:17] 10.34.130.62:
+[10:38:20] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:38:22] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:39:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:39:08] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:39:09] 10.34.130.62:
+[10:39:10] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:39:11] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:40:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:40:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:40:07] 10.34.130.62:
+[10:40:08] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:40:08] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:41:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:41:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:41:07] 10.34.130.62:
+[10:41:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:41:07] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:42:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:42:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:42:07] 10.34.130.62:
+[10:42:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:42:07] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:43:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:43:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:43:07] 10.34.130.62:
+[10:43:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:43:07] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:44:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:44:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:44:07] 10.34.130.62:
+[10:44:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:44:07] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:45:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:45:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:45:07] 10.34.130.62:
+[10:45:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:45:07] 所有服务器
+10.34.130.62
+
+127.0.0.1
+10.34.130.44
+[10:46:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:46:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:46:07] 10.34.130.62:
+[10:46:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:46:07] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:47:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:47:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:47:07] 10.34.130.62:
+[10:47:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:47:07] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:48:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:48:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:48:07] 10.34.130.62:
+[10:48:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:48:07] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:49:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:49:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:49:07] 10.34.130.62:
+[10:49:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:49:07] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:50:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:50:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:50:07] 10.34.130.62:
+[10:50:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:50:07] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:51:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:51:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:51:07] 10.34.130.62:
+[10:51:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:51:07] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:52:07] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[10:52:07] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[10:52:07] 10.34.130.62:
+[10:52:07] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[10:52:07] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[10:52:25] 127.0.0.1:send_mail{@qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true@}
+[10:52:25] 10.34.130.62:127.0.0.1:send_mail{@qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>NELO2_TC_001: send <1> as PRI syslog.</div></td>
+
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Steps:
+ 1. Send syslog to collector server:
+	&lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffCONN:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/NCORD_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/NCORD_981194187012991307.xls' in DS[131], 1
+
+****************Starting*********************
+---Send the log successfully!
+
+---Verify the check point
+
+[CheckPoint]:  appname
+(Expect) : owfs
+(Actual) : owfs
+[CheckPoint]:  body
+(Expect) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+(Actual) : &lt;31&gt;2012-12-17 11:28:37 qiao00000 owfs: [ffffffconn:owfs_copy_operation] fail to copy 'check_out_renewalfuse_v2owner_0031281:/vof20004bf0a38d24653_excel/ncord_981194187012991307.xls-&gt;fuse_v2owner_0108350:/vof20004ce61e0c48463_14/ncord_981194187012991307.xls' in ds[131], 1
+[CheckPoint]:  facility
+(Expect) : system daemons
+(Actual) : system daemons
+[CheckPoint]:  host
+(Expect) : qiao00000
+(Actual) : qiao00000
+[CheckPoint]:  logsource
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  logtype
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjname
+(Expect) : syslog
+(Actual) : syslog
+[CheckPoint]:  prjversion
+(Expect) : -
+(Actual) : -
+[CheckPoint]:  severity
+(Expect) : debug: debug-level messages
+(Actual) : debug: debug-level messages
+****************End*********************
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+|true@}
+[10:52:26] 10.34.130.62:qiaoliang0222@126.com;yangming@nhn.com;qiaohongliang@nhn.com|workhard_smile@163.com;wugang@nhn.com|Nelo2 Test Result on 20130111| URL link:<br />https://10.34.130.62:8282/nelo2/20130111/index_20130111.html<br /><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Result</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Result</h1>
+<p class='attribute'><strong>Start Time:</strong> 2013-01-08 15:30:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.028000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
+
+<p class='description'>Test Report.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>syslogTestCases</td>
+    <td>1</td>
+
+
+[12:03:44] SYS_START: 系统启动成功！
+[12:03:45] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[12:03:45] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[12:03:45] 10.34.130.62:
+[12:03:45] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[12:03:45] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+
+
+[13:28:22] SYS_START: 系统启动成功！
+[13:28:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:28:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:28:24] 10.34.130.62:
+[13:28:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:28:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:28:29] 127.0.0.1:cd nginx && nginx -s stop >nul
+[13:28:30] 127.0.0.1:127.0.0.1:win_cmd{@cd nginx && start nginx >nul@}
+[13:28:30] EXEC_CMD:  <127.0.0.1> Output.
+
+[13:28:30] 10.34.130.62:cd nginx && start nginx >nul
+[13:28:30] EXEC_CMD:  <127.0.0.1> Output.
+
+[13:28:37] 127.0.0.1:cd nginx && nginx -s stop >nul
+[13:28:38] 127.0.0.1:127.0.0.1:win_cmd{@cd nginx && start nginx >nul@}
+[13:28:38] EXEC_CMD:  <127.0.0.1> Output.
+
+[13:28:38] 10.34.130.62:cd nginx && start nginx >nul
+[13:28:38] EXEC_CMD:  <127.0.0.1> Output.
+
+[13:29:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:29:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:29:24] 10.34.130.62:
+[13:29:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:29:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:29:59] 127.0.0.1:cd nginx && nginx -s stop >nul
+[13:30:00] 127.0.0.1:127.0.0.1:win_cmd{@cd nginx && start nginx >nul@}
+[13:30:00] EXEC_CMD:  <127.0.0.1> Output.
+
+[13:30:00] 10.34.130.62:cd nginx && start nginx >nul
+[13:30:00] EXEC_CMD:  <127.0.0.1> Output.
+
+[13:30:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:30:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:30:24] 10.34.130.62:
+[13:30:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:30:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:30:52] 127.0.0.1:cd nginx && nginx -s stop >nul
+[13:30:52] 127.0.0.1:127.0.0.1:win_cmd{@cd nginx && start nginx >nul@}
+[13:30:52] EXEC_CMD:  <127.0.0.1> Output.
+
+[13:30:52] 10.34.130.62:cd nginx && start nginx >nul
+[13:30:53] EXEC_CMD:  <127.0.0.1> Output.
+
+[13:31:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:31:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:31:24] 10.34.130.62:
+[13:31:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:31:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:32:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:32:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:32:24] 10.34.130.62:
+[13:32:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:32:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:33:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:33:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:33:24] 10.34.130.62:
+[13:33:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:33:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:34:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:34:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:34:24] 10.34.130.62:
+[13:34:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:34:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:35:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:35:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:35:24] 10.34.130.62:
+[13:35:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:35:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:36:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:36:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:36:24] 10.34.130.62:
+[13:36:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:36:24] 所有服务器
+10.34.130.62
+
+127.0.0.1
+10.34.130.44
+[13:37:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:37:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:37:24] 10.34.130.62:
+[13:37:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:37:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:38:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:38:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:38:24] 10.34.130.62:
+[13:38:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:38:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:39:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:39:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:39:24] 10.34.130.62:
+[13:39:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:39:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:40:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:40:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:40:24] 10.34.130.62:
+[13:40:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:40:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:41:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:41:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:41:24] 10.34.130.62:
+[13:41:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:41:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:42:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:42:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:42:24] 10.34.130.62:
+[13:42:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:42:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:43:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:43:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:43:24] 10.34.130.62:
+[13:43:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:43:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:44:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:44:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:44:24] 10.34.130.62:
+[13:44:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:44:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:45:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:45:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:45:24] 10.34.130.62:
+[13:45:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:45:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:46:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:46:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:46:24] 10.34.130.62:
+[13:46:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:46:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:47:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:47:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:47:24] 10.34.130.62:
+[13:47:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:47:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:48:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:48:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:48:24] 10.34.130.62:
+[13:48:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:48:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:49:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:49:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+
+
+[13:49:24] 10.34.130.62:
+[13:49:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:49:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:50:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:50:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:50:24] 10.34.130.62:
+[13:50:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:50:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:51:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:51:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:51:24] 10.34.130.62:
+[13:51:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:51:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:52:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:52:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:52:24] 10.34.130.62:
+[13:52:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:52:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:53:24] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:53:24] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:53:24] 10.34.130.62:
+[13:53:24] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:53:24] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:54:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:54:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:54:25] 10.34.130.62:
+[13:54:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:54:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:55:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:55:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:55:25] 10.34.130.62:
+[13:55:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:55:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:56:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:56:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:56:25] 10.34.130.62:
+[13:56:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:56:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:57:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:57:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:57:25] 10.34.130.62:
+[13:57:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:57:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:58:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:58:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:58:25] 10.34.130.62:
+[13:58:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:58:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[13:59:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[13:59:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[13:59:25] 10.34.130.62:
+[13:59:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[13:59:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:00:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:00:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:00:25] 10.34.130.62:
+[14:00:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:00:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:01:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:01:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:01:25] 10.34.130.62:
+[14:01:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:01:25] 所有服务器
+
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:02:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:02:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:02:25] 10.34.130.62:
+[14:02:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:02:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:03:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:03:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:03:25] 10.34.130.62:
+[14:03:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:03:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:04:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:04:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:04:25] 10.34.130.62:
+[14:04:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:04:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:05:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:05:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:05:25] 10.34.130.62:
+[14:05:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:05:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:06:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:06:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:06:25] 10.34.130.62:
+[14:06:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:06:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:07:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:07:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:07:25] 10.34.130.62:
+[14:07:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:07:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:08:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:08:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:08:25] 10.34.130.62:
+[14:08:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:08:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:09:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:09:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:09:25] 10.34.130.62:
+[14:09:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:09:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:10:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:10:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:10:25] 10.34.130.62:
+[14:10:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:10:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:11:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:11:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:11:25] 10.34.130.62:
+[14:11:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:11:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:12:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:12:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:12:25] 10.34.130.62:
+[14:12:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:12:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:13:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:13:25] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:13:25] 10.34.130.62:
+[14:13:25] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:13:25] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:14:25] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+
+
+[14:54:58] SYS_START: 系统启动成功！
+[14:54:59] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:54:59] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:54:59] 10.34.130.62:
+[14:54:59] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:54:59] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:55:10] 127.0.0.1:win_cmd{@dir@}
+[14:55:10] 10.34.130.62:127.0.0.1:win_cmd{@dir@}
+[14:55:10] 10.34.130.62:dir
+[14:55:10] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  14:54    <DIR>          .
+2013/01/11  14:54    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/09  17:12             5,842 CustomUI.xml
+2013/01/11  10:30    <DIR>          Docs
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  14:54           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  14:54           642,560 ECSTOOL.pdb
+2013/01/11  14:32            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2009/08/31  00:40               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  14:54           119,616 ECSTOOL.xml
+2013/01/11  10:30    <DIR>          Groups
+2013/01/11  10:38    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  11:31    <DIR>          nginx
+2013/01/11  10:30    <DIR>          Plugs
+2013/01/11  10:32            14,848 PlugsRoot.dll
+2013/01/11  10:32            32,256 PlugsRoot.pdb
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  10:30    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  10:30    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+2012/09/28  16:06             1,001 注释.txt
+              21 个文件      3,850,215 字节
+               9 个目录 135,740,846,080 可用字节
+
+[14:55:32] 127.0.0.1:win_cmd{@cd ..&&dir@}
+[14:55:32] 10.34.130.62:127.0.0.1:win_cmd{@cd ..&&dir@}
+[14:55:32] 10.34.130.62:cd ..&&dir
+[14:55:33] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  14:54    <DIR>          .
+2013/01/11  14:54    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/09  17:12             5,842 CustomUI.xml
+2013/01/11  10:30    <DIR>          Docs
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  14:54           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  14:54           642,560 ECSTOOL.pdb
+2013/01/11  14:32            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2009/08/31  00:40               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  14:54           119,616 ECSTOOL.xml
+2013/01/11  10:30    <DIR>          Groups
+2013/01/11  10:38    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  11:31    <DIR>          nginx
+2013/01/11  10:30    <DIR>          Plugs
+2013/01/11  10:32            14,848 PlugsRoot.dll
+2013/01/11  10:32            32,256 PlugsRoot.pdb
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  10:30    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  10:30    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+2012/09/28  16:06             1,001 注释.txt
+              21 个文件      3,850,215 字节
+               9 个目录 135,740,780,544 可用字节
+
+[14:55:51] 127.0.0.1:win_cmd{@cd .. && dir@}
+[14:55:51] 10.34.130.62:127.0.0.1:win_cmd{@cd .. && dir@}
+[14:55:51] 10.34.130.62:cd .. && dir
+[14:55:51] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  14:54    <DIR>          .
+2013/01/11  14:54    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/09  17:12             5,842 CustomUI.xml
+2013/01/11  10:30    <DIR>          Docs
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  14:54           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  14:54           642,560 ECSTOOL.pdb
+2013/01/11  14:32            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2009/08/31  00:40               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  14:54           119,616 ECSTOOL.xml
+2013/01/11  10:30    <DIR>          Groups
+2013/01/11  10:38    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  11:31    <DIR>          nginx
+2013/01/11  10:30    <DIR>          Plugs
+2013/01/11  10:32            14,848 PlugsRoot.dll
+2013/01/11  10:32            32,256 PlugsRoot.pdb
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  10:30    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  10:30    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+2012/09/28  16:06             1,001 注释.txt
+              21 个文件      3,850,215 字节
+               9 个目录 135,740,780,544 可用字节
+
+[14:55:59] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:56:00] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:56:00] 10.34.130.62:
+[14:56:00] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:56:00] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:56:04] 127.0.0.1:win_cmd{@dir@}
+[14:56:04] 10.34.130.62:127.0.0.1:win_cmd{@dir@}
+[14:56:04] 10.34.130.62:dir
+[14:56:05] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  14:54    <DIR>          .
+2013/01/11  14:54    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/09  17:12             5,842 CustomUI.xml
+2013/01/11  10:30    <DIR>          Docs
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  14:54           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  14:54           642,560 ECSTOOL.pdb
+2013/01/11  14:32            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2009/08/31  00:40               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  14:54           119,616 ECSTOOL.xml
+2013/01/11  10:30    <DIR>          Groups
+2013/01/11  10:38    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  11:31    <DIR>          nginx
+2013/01/11  10:30    <DIR>          Plugs
+2013/01/11  10:32            14,848 PlugsRoot.dll
+2013/01/11  10:32            32,256 PlugsRoot.pdb
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  10:30    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  10:30    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+2012/09/28  16:06             1,001 注释.txt
+              21 个文件      3,850,215 字节
+               9 个目录 135,740,776,448 可用字节
+
+[14:56:18] 127.0.0.1:win_cmd{@cd ..&&dir@}
+[14:56:18] 10.34.130.62:127.0.0.1:win_cmd{@cd ..&&dir@}
+[14:56:18] 10.34.130.62:cd ..&&dir
+[14:56:19] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  14:54    <DIR>          .
+2013/01/11  14:54    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/09  17:12             5,842 CustomUI.xml
+2013/01/11  10:30    <DIR>          Docs
+
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  14:54           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  14:54           642,560 ECSTOOL.pdb
+2013/01/11  14:32            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2009/08/31  00:40               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  14:54           119,616 ECSTOOL.xml
+2013/01/11  10:30    <DIR>          Groups
+2013/01/11  10:38    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  11:31    <DIR>          nginx
+2013/01/11  10:30    <DIR>          Plugs
+2013/01/11  10:32            14,848 PlugsRoot.dll
+2013/01/11  10:32            32,256 PlugsRoot.pdb
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  10:30    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  10:30    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+2012/09/28  16:06             1,001 注释.txt
+              21 个文件      3,850,215 字节
+               9 个目录 135,740,776,448 可用字节
+
+[14:56:37] 127.0.0.1:win_cmd{@cd Docs&&dir@}
+[14:56:37] 10.34.130.62:127.0.0.1:win_cmd{@cd Docs&&dir@}
+[14:56:37] 10.34.130.62:cd Docs&&dir
+[14:56:37] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  14:54    <DIR>          .
+2013/01/11  14:54    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/09  17:12             5,842 CustomUI.xml
+2013/01/11  10:30    <DIR>          Docs
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  14:54           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  14:54           642,560 ECSTOOL.pdb
+2013/01/11  14:32            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2009/08/31  00:40               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  14:54           119,616 ECSTOOL.xml
+2013/01/11  10:30    <DIR>          Groups
+2013/01/11  10:38    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  11:31    <DIR>          nginx
+2013/01/11  10:30    <DIR>          Plugs
+2013/01/11  10:32            14,848 PlugsRoot.dll
+2013/01/11  10:32            32,256 PlugsRoot.pdb
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  10:30    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  10:30    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+2012/09/28  16:06             1,001 注释.txt
+              21 个文件      3,850,215 字节
+               9 个目录 135,740,772,352 可用字节
+
+[14:56:47] 127.0.0.1:win_cmd{@cd Docs;dir@}
+[14:56:47] 10.34.130.62:127.0.0.1:win_cmd{@cd Docs;dir@}
+[14:56:47] 10.34.130.62:cd Docs;dir
+[14:56:48] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  14:54    <DIR>          .
+2013/01/11  14:54    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/09  17:12             5,842 CustomUI.xml
+2013/01/11  10:30    <DIR>          Docs
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  14:54           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  14:54           642,560 ECSTOOL.pdb
+2013/01/11  14:32            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2009/08/31  00:40               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  14:54           119,616 ECSTOOL.xml
+2013/01/11  10:30    <DIR>          Groups
+2013/01/11  10:38    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  11:31    <DIR>          nginx
+2013/01/11  10:30    <DIR>          Plugs
+2013/01/11  10:32            14,848 PlugsRoot.dll
+2013/01/11  10:32            32,256 PlugsRoot.pdb
+
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  10:30    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  10:30    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+2012/09/28  16:06             1,001 注释.txt
+              21 个文件      3,850,215 字节
+               9 个目录 135,740,772,352 可用字节
+
+[14:56:59] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[14:57:00] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[14:57:00] 10.34.130.62:
+[14:57:00] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[14:57:00] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[14:57:06] 127.0.0.1:win_cmd{@cd Docs&&dir@}
+[14:57:06] 10.34.130.62:127.0.0.1:win_cmd{@cd Docs&&dir@}
+[14:57:06] 10.34.130.62:cd Docs&&dir
+[14:57:06] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  14:54    <DIR>          .
+2013/01/11  14:54    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/09  17:12             5,842 CustomUI.xml
+2013/01/11  10:30    <DIR>          Docs
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  14:54           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  14:54           642,560 ECSTOOL.pdb
+2013/01/11  14:32            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2009/08/31  00:40               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  14:54           119,616 ECSTOOL.xml
+2013/01/11  10:30    <DIR>          Groups
+2013/01/11  10:38    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  11:31    <DIR>          nginx
+2013/01/11  10:30    <DIR>          Plugs
+2013/01/11  10:32            14,848 PlugsRoot.dll
+2013/01/11  10:32            32,256 PlugsRoot.pdb
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  10:30    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  10:30    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+2012/09/28  16:06             1,001 注释.txt
+              21 个文件      3,850,215 字节
+               9 个目录 135,740,768,256 可用字节
+
+[14:57:27] 127.0.0.1:win_cmd{@cd Docs&&dir@}
+[14:57:27] 10.34.130.62:127.0.0.1:win_cmd{@cd Docs&&dir@}
+[14:57:27] 10.34.130.62:cd Docs&&dir
+[14:57:28] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  14:54    <DIR>          .
+2013/01/11  14:54    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/09  17:12             5,842 CustomUI.xml
+2013/01/11  10:30    <DIR>          Docs
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  14:54           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  14:54           642,560 ECSTOOL.pdb
+2013/01/11  14:32            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2009/08/31  00:40               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  14:54           119,616 ECSTOOL.xml
+2013/01/11  10:30    <DIR>          Groups
+2013/01/11  10:38    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  11:31    <DIR>          nginx
+2013/01/11  10:30    <DIR>          Plugs
+2013/01/11  10:32            14,848 PlugsRoot.dll
+2013/01/11  10:32            32,256 PlugsRoot.pdb
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  10:30    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  10:30    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+
+
+[15:12:08] SYS_START: 系统启动成功！
+[15:12:10] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[15:12:10] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[15:12:10] 10.34.130.62:
+[15:12:10] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[15:12:10] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[15:12:16] 127.0.0.1:cd nginx && nginx -s stop >nul
+[15:12:26] 127.0.0.1:127.0.0.1:win_cmd{@cd nginx && start nginx >nul@}
+[15:12:26] 10.34.130.62:cd nginx && start nginx >nul
+[15:13:10] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[15:13:10] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[15:13:10] 10.34.130.62:
+[15:13:10] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[15:13:10] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[15:13:41] 127.0.0.1:win_cmd{@dir@}
+[15:13:41] 10.34.130.62:127.0.0.1:win_cmd{@dir@}
+[15:13:41] 10.34.130.62:dir
+[15:13:42] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  15:11    <DIR>          .
+2013/01/11  15:11    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/09  17:12             5,842 CustomUI.xml
+2013/01/11  10:30    <DIR>          Docs
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  15:11           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  15:11           642,560 ECSTOOL.pdb
+2013/01/11  15:11            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2009/08/31  00:40               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  15:11           119,616 ECSTOOL.xml
+2013/01/11  10:30    <DIR>          Groups
+2013/01/11  10:38    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  11:31    <DIR>          nginx
+2013/01/11  10:30    <DIR>          Plugs
+2013/01/11  10:32            14,848 PlugsRoot.dll
+2013/01/11  10:32            32,256 PlugsRoot.pdb
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  10:30    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  10:30    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+2012/09/28  16:06             1,001 注释.txt
+              21 个文件      3,850,215 字节
+               9 个目录 135,740,166,144 可用字节
+
+[15:13:48] 127.0.0.1:win_cmd{@cd ..&&dir@}
+[15:13:48] 10.34.130.62:127.0.0.1:win_cmd{@cd ..&&dir@}
+[15:13:48] 10.34.130.62:cd ..&&dir
+[15:13:48] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin 的目录
+
+2013/01/11  10:30    <DIR>          .
+2013/01/11  10:30    <DIR>          ..
+2013/01/11  15:11    <DIR>          Debug
+2012/09/26  23:16           113,780 ECSTOOL.xml
+2013/01/11  10:30    <DIR>          Release
+               1 个文件        113,780 字节
+               4 个目录 135,740,166,144 可用字节
+
+[15:14:10] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[15:14:10] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[15:14:10] 10.34.130.62:
+[15:14:10] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[15:14:10] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[15:14:18] 127.0.0.1:cd nginx && nginx -s stop >nul
+[15:14:28] 127.0.0.1:127.0.0.1:win_cmd{@cd nginx && start nginx >nul@}
+[15:14:28] 10.34.130.62:cd nginx && start nginx >nul
+[15:14:41] 127.0.0.1:win_cmd{@cd ..&&dir@}
+[15:14:41] 10.34.130.62:127.0.0.1:win_cmd{@cd ..&&dir@}
+[15:14:41] 10.34.130.62:cd ..&&dir
+[15:14:41] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 C 中的卷没有标签。
+ 卷的序列号是 8E95-A44D
+
+ C:\wugang\Nginx\ECSTOOL\ECSTOOL\bin 的目录
+
+
+
+[15:23:12] SYS_START: 系统启动成功！
+[15:23:14] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[15:23:14] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[15:23:14] 10.34.130.62:
+[15:23:14] 10.34.130.62:10.34.135.154:get_connect_servers{@@}
+[15:23:14] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+
+
+
+[16:25:30] SYS_START: 系统启动成功
+[16:25:31] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:25:31] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:25:31] 10.34.135.154:
+[16:25:31] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:25:31] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:25:31] 10.34.135.154:
+[16:25:31] 在线列表：
+
+
+[16:27:32] SYS_START: 系统启动成功！
+[16:27:33] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:27:33] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:27:33] 10.34.135.154:
+[16:27:33] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:27:33] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:27:33] 10.34.135.154:
+[16:27:33] 在线列表：
+[16:28:25] 127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:28:25] 10.34.135.154:127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:28:25] 10.34.135.154:wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe
+[16:28:35] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:28:35] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:28:35] 10.34.135.154:
+[16:28:35] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:28:35] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:28:35] 10.34.135.154:
+[16:28:35] 在线列表：
+
+
+[16:30:08] SYS_START: 系统启动成功！
+[16:30:09] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:30:09] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:30:09] 10.34.135.154:
+[16:30:09] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:30:09] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:30:09] 10.34.135.154:
+[16:30:09] 在线列表：
+[16:30:15] 127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:30:16] 10.34.135.154:127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:30:16] 10.34.135.154:wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe
+[16:30:36] 127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:30:36] 10.34.135.154:127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:30:36] 10.34.135.154:wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe
+
+
+[16:30:08] SYS_START: 系统启动成功！
+[16:30:09] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:30:09] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:30:09] 10.34.135.154:
+[16:30:09] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:30:09] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:30:09] 10.34.135.154:
+[16:30:09] 在线列表：
+[16:30:15] 127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:30:16] 10.34.135.154:127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:30:16] 10.34.135.154:wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe
+[16:30:36] 127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:30:36] 10.34.135.154:127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:30:36] 10.34.135.154:wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe
+[16:31:09] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:31:09] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:31:09] 10.34.135.154:
+[16:31:09] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:31:09] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:31:09] 10.34.135.154:
+[16:31:09] 在线列表：
+[16:31:52] 127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:31:52] 10.34.135.154:127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:31:52] 10.34.135.154:wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe
+[16:32:09] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:32:09] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:32:09] 10.34.135.154:
+[16:32:09] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:32:09] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:32:09] 10.34.135.154:
+[16:32:09] 在线列表：
+
+
+[16:36:26] SYS_START: 系统启动成功！
+[16:36:27] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:36:27] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:36:27] 10.34.135.154:w
+[16:36:27] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:36:27] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:36:27] 10.34.135.154:
+[16:36:27] 在线列表：in
+[16:36:39] 127.0.0.1:win_cmd{@dir@}
+[16:36:39] 10.34.135.154:127.0.0.1:win_cmd{@dir@}
+[16:36:39] 10.34.135.154:dir
+[16:37:01] 127.0.0.1:win_cmd{@cd ..&&dir@}
+[16:37:01] 10.34.135.154:127.0.0.1:win_cmd{@cd ..&&dir@}
+[16:37:01] 10.34.135.154:cd ..&&dir
+
+
+[16:41:32] SYS_START: 系统启动成功！
+[16:41:33] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:41:33] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:41:33] 10.34.135.154:
+[16:41:33] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:41:33] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:41:33] 10.34.135.154:
+[16:41:33] 在线列表：
+[16:41:39] 127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:41:39] 10.34.135.154:127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:41:39] 10.34.135.154:wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe
+[16:41:52] 127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:41:52] 10.34.135.154:127.0.0.1:win_cmd{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:41:52] 10.34.135.154:wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe
+[16:42:33] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:42:33] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:42:33] 10.34.135.154:
+[16:42:33] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:42:33] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:42:33] 10.34.135.154:
+[16:42:33] 在线列表：
+
+
+[16:50:35] SYS_START: 系统启动成功！
+[16:50:36] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:50:36] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:50:36] 10.34.135.154:
+[16:50:36] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:50:36] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:50:36] 10.34.135.154:
+[16:50:36] 在线列表：
+[16:50:43] 127.0.0.1:win_cmd{@dir@}
+[16:50:43] 10.34.135.154:127.0.0.1:win_cmd{@dir@}
+[16:50:43] 10.34.135.154:dir
+[16:50:44] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 D 中的卷是 新加卷
+ 卷的序列号是 0089-7B14
+
+ D:\NHN\ECSTOOL20130111\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  16:50    <DIR>          .
+2013/01/11  16:50    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/11  15:32             5,840 CustomUI.xml
+2013/01/11  16:02    <DIR>          Docs
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  16:50           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  16:50           673,280 ECSTOOL.pdb
+2013/01/11  16:50            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2010/03/17  22:39               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  16:50           119,784 ECSTOOL.xml
+2013/01/11  16:02    <DIR>          Groups
+2013/01/11  16:02    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  16:02    <DIR>          nginx
+2013/01/11  16:02    <DIR>          Plugs
+2013/01/11  16:36            14,848 PlugsRoot.dll
+2013/01/11  16:36            34,304 PlugsRoot.pdb
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  16:02    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  16:02    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+2012/09/28  16:06             1,001 注释.txt
+              21 个文件      3,883,149 字节
+               9 个目录 77,025,611,776 可用字节
+
+
+
+[16:55:26] SYS_START: 系统启动成功！
+[16:55:27] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:55:27] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:55:27] 10.34.135.154:
+[16:55:27] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:55:27] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:55:27] 10.34.135.154:
+[16:55:27] 在线列表：
+[16:55:39] 127.0.0.1:win_cmd{@dir@}
+[16:55:39] 10.34.135.154:127.0.0.1:win_cmd{@dir@}
+[16:55:39] 10.34.135.154:dir
+[16:55:40] EXEC_CMD:  <127.0.0.1> Output.
+ 驱动器 D 中的卷是 新加卷
+ 卷的序列号是 0089-7B14
+
+ D:\NHN\ECSTOOL20130111\ECSTOOL\bin\Debug 的目录
+
+2013/01/11  16:55    <DIR>          .
+2013/01/11  16:55    <DIR>          ..
+2013/01/09  16:24                78 crontab.lst
+2013/01/11  15:32             5,840 CustomUI.xml
+2013/01/11  16:02    <DIR>          Docs
+2012/09/26  10:31           889,416 dotNetFx40_Full_setup.exe
+2013/01/11  16:55           813,568 ECSTOOL.exe
+2013/01/08  10:08             2,222 ECSTOOL.exe.config
+2013/01/11  16:55           673,280 ECSTOOL.pdb
+2013/01/11  16:51            11,600 ECSTOOL.vshost.exe
+2013/01/08  10:08             2,222 ECSTOOL.vshost.exe.config
+2010/03/17  22:39               490 ECSTOOL.vshost.exe.manifest
+2013/01/11  16:55           119,784 ECSTOOL.xml
+2013/01/11  16:02    <DIR>          Groups
+2013/01/11  16:02    <DIR>          Log
+2012/04/03  17:33           321,536 lua51.dll
+2012/04/03  17:43            60,928 LuaInterface.dll
+2013/01/11  16:02    <DIR>          nginx
+2013/01/11  16:02    <DIR>          Plugs
+2013/01/11  16:36            14,848 PlugsRoot.dll
+2013/01/11  16:36            34,304 PlugsRoot.pdb
+2012/03/28  16:37           366,592 Renci.SshNet.dll
+2004/02/21  08:47           143,360 Routrek.granados.dll
+2013/01/11  16:02    <DIR>          Scripts
+2013/01/09  16:24               384 ServerETC.lst
+2012/05/22  14:57               160 SN-First.TXT
+2012/05/22  14:57               160 SN.TXT
+2013/01/11  16:02    <DIR>          Temp
+2010/11/25  08:23           421,376 WeifenLuo.WinFormsUI.Docking.dll
+2012/09/28  16:06             1,001 注释.txt
+              21 个文件      3,883,149 字节
+               9 个目录 77,025,607,680 可用字节
+
+[16:55:55] 127.0.0.1:open_file{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:55:55] 10.34.135.154:127.0.0.1:open_file{@wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe@}
+[16:55:55] 10.34.135.154:wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe
+[16:55:55] OPEN_FILE:  <127.0.0.1>wget -P D:/CUBRID/ http://svn.platform.nhncorp.cn/windows_tools/setup-publish/branches/nCapture/NaverCaptureInst-2.4-20130110.exe 已执行。
+[16:56:27] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[16:56:27] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[16:56:27] 10.34.135.154:
+[16:56:27] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[16:56:27] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[16:56:27] 10.34.135.154:
+[16:56:27] 在线列表：
+
+
+[17:06:14] SYS_START: 系统启动成功！
+[17:06:15] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[17:06:15] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[17:06:15] 10.34.135.154:
+[17:06:15] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[17:06:15] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[17:06:15] 10.34.135.154:
+[17:06:15] 在线列表：
+[17:06:26] 127.0.0.1:nginx
+[17:06:26] KILL_PROC:  <127.0.0.1>nginx 已全部停止。
+[17:06:33] 127.0.0.1:cd nginx && nginx -s stop >nul
+[17:06:44] 127.0.0.1:127.0.0.1:win_cmd{@cd nginx && start nginx >nul@}
+[17:06:44] 10.34.135.154:cd nginx && start nginx >nul
+[17:07:15] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[17:07:15] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[17:07:15] 10.34.135.154:
+[17:07:15] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[17:07:15] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[17:07:15] 10.34.135.154:
+[17:07:15] 在线列表：
+[17:07:31] 127.0.0.1:nginx
+[17:07:31] KILL_PROC:  <127.0.0.1>nginx 已全部停止。
+[17:08:15] 127.0.0.1:127.0.0.1:get_all_servers{@@}
+[17:08:15] 127.0.0.1:127.0.0.1:10.34.135.154:get_connect_servers{@@}
+[17:08:15] 10.34.135.154:
+[17:08:15] 10.34.135.154:10.34.135.154:get_connect_servers{@@}
+[17:08:15] 所有服务器
+10.34.130.62
+127.0.0.1
+10.34.130.44
+[17:08:15] 10.34.135.154:
+[17:08:15] 在线列表：
+
